@@ -1,0 +1,51 @@
+{
+  "name": "airportoxb",
+  "version": "1.0.0",
+  "description": "Web app of the international OXB airport ",
+  "scripts": {
+    "start": "concurrently \"npm:client\" \"npm:server\"",
+    "client": "parcel public/html/main.html"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/teixeira78/AirportOXB.git"
+  },
+  "author": "Edson Teixeira",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/teixeira78/AirportOXB/issues"
+  },
+  "homepage": "https://github.com/teixeira78/AirportOXB#readme",
+  "dependencies": {
+    "bcryptjs": "^2.4.3",
+    "cookie-parser": "^1.4.6",
+    "cors": "^2.8.5",
+    "dotenv": "^16.3.1",
+    "express": "^4.18.2",
+    "express-mongo-sanitize": "^2.2.0",
+    "express-rate-limit": "^7.1.2",
+    "helmet": "^7.0.0",
+    "hpp": "^0.2.3",
+    "jsonwebtoken": "^9.0.2",
+    "mongoose": "^7.6.3",
+    "morgan": "^1.10.0",
+    "nodemailer": "^6.9.7",
+    "slugify": "^1.6.6",
+    "swiper": "^10.3.1",
+    "validator": "^13.11.0"
+  },
+  "devDependencies": {
+    "concurrently": "^8.2.2",
+    "eslint": "^8.52.0",
+    "eslint-config-airbnb": "^19.0.4",
+    "eslint-config-airbnb-base": "^15.0.0",
+    "eslint-config-prettier": "^9.0.0",
+    "eslint-plugin-import": "^2.29.0",
+    "eslint-plugin-jsx-a11y": "^6.7.1",
+    "eslint-plugin-node": "^11.1.0",
+    "eslint-plugin-prettier": "^5.0.1",
+    "eslint-plugin-react": "^7.33.2",
+    "parcel-plugin-clean-dist": "^0.0.6",
+    "prettier": "^3.0.3"
+  }
+}

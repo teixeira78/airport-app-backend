@@ -5,7 +5,6 @@ export class Model {
     try {
       const response = await fetch(url);
       const data = await response.text();
-
       return shouldParse ? JSON.parse(data) : data;
     } catch (err) {
       console.error(err);

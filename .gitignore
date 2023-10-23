@@ -3,3 +3,5 @@ node_modules/
 public/images/
 .eslintrc.json
 .prettierrc
+.cache
+package-lock.json

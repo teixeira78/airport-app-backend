@@ -6,7 +6,7 @@ import model from './model';
 
 class Controller {
   _pageName;
-  _initialPage = 'homePage';
+  initialPage = 'homePage';
 
   constructor() {
     window.addEventListener('hashchange', this._navigate);
