@@ -9970,7 +9970,7 @@ var Controller = /*#__PURE__*/function () {
     var _this = this;
     _classCallCheck(this, Controller);
     _defineProperty(this, "_pageName", void 0);
-    _defineProperty(this, "_initialPage", 'homePage');
+    _defineProperty(this, "initialPage", 'homePage');
     _defineProperty(this, "_loadPage", /*#__PURE__*/_asyncToGenerator( /*#__PURE__*/_regeneratorRuntime().mark(function _callee() {
       var pageContent;
       return _regeneratorRuntime().wrap(function _callee$(_context) {
@@ -9983,10 +9983,11 @@ var Controller = /*#__PURE__*/function () {
             console.log(pageContent);
 
             // 2) Render Page
-            _pageView.default.render(pageContent);
+            // pageView.render(pageContent);
+
             _this.renderSwiper();
             _this._pageMapping[_this._pageName]();
-          case 7:
+          case 6:
           case "end":
             return _context.stop();
         }
@@ -10063,7 +10064,7 @@ var parent = module.bundle.parent;
 if ((!parent || !parent.isParcelRequire) && typeof WebSocket !== 'undefined') {
   var hostname = "" || location.hostname;
   var protocol = location.protocol === 'https:' ? 'wss' : 'ws';
-  var ws = new WebSocket(protocol + '://' + hostname + ':' + "53380" + '/');
+  var ws = new WebSocket(protocol + '://' + hostname + ':' + "54055" + '/');
   ws.onmessage = function (event) {
     checkedAssets = {};
     assetsToAccept = [];

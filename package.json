@@ -4,7 +4,10 @@
   "description": "Web app of the international OXB airport ",
   "scripts": {
     "start": "concurrently \"npm:client\" \"npm:server\"",
-    "client": "parcel public/html/main.html"
+    "client": "parcel public/html/main.html",
+    "server": "nodemon backEnd/server.js",
+    "start:prod": "set NODE_ENV=production && nodemon backEnd/server.js",
+    "build": "parcel build public/html/main.html"
   },
   "repository": {
     "type": "git",

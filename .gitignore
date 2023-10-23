@@ -5,3 +5,4 @@ public/images/
 .prettierrc
 .cache
 package-lock.json
+dist/
