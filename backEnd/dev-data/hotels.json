@@ -1,0 +1,87 @@
+[
+  {
+    "name": "Luxury Beach Resort",
+    "description": "A luxurious beachfront resort with stunning ocean views.",
+    "location": "Paradise Island, Bahamas",
+    "rating": 5,
+    "amenities": [
+      "Private Beach",
+      "Spa",
+      "Gourmet Dining",
+      "Infinity Pool",
+      "Water Sports"
+    ],
+    "howToBook": "Book now at www.example.com/luxury-beach-resort",
+    "images": [
+      "luxury-beach-resort-1.jpg",
+      "luxury-beach-resort-2.jpg",
+      "luxury-beach-resort-3.jpg"
+    ]
+  },
+  {
+    "name": "Mountain View Lodge",
+    "description": "A cozy lodge nestled in the scenic mountains.",
+    "location": "Aspen, Colorado, USA",
+    "rating": 4,
+    "amenities": [
+      "Skiing",
+      "Hiking Trails",
+      "Hot Tub",
+      "Fireplace",
+      "Restaurant"
+    ],
+    "howToBook": "Book now at www.example.com/mountain-view-lodge",
+    "images": ["mountain-view-lodge-1.jpg", "mountain-view-lodge-2.jpg"]
+  },
+  {
+    "name": "City Center Hotel",
+    "description": "A modern hotel in the heart of the city's bustling downtown.",
+    "location": "New York City, USA",
+    "rating": 4,
+    "amenities": [
+      "Fitness Center",
+      "Rooftop Bar",
+      "Meeting Rooms",
+      "Restaurant"
+    ],
+    "howToBook": "Book now at www.example.com/city-center-hotel",
+    "images": [
+      "city-center-hotel-1.jpg",
+      "city-center-hotel-2.jpg",
+      "city-center-hotel-3.jpg"
+    ]
+  },
+  {
+    "name": "Seaside Villas",
+    "description": "Charming seaside villas with beautiful sea views.",
+    "location": "Santorini, Greece",
+    "rating": 5,
+    "amenities": [
+      "Infinity Pool",
+      "Private Terrace",
+      "Beach Access",
+      "Fine Dining"
+    ],
+    "howToBook": "Book now at www.example.com/seaside-villas",
+    "images": ["seaside-villas-1.jpg", "seaside-villas-2.jpg"]
+  },
+  {
+    "name": "Historic Castle Hotel",
+    "description": "A historic castle converted into a luxury hotel.",
+    "location": "Edinburgh, Scotland",
+    "rating": 4,
+    "amenities": ["Castle Tours", "Fine Dining", "Library", "Gardens"],
+    "howToBook": "Book now at www.example.com/castle-hotel",
+    "images": ["castle-hotel-1.jpg", "castle-hotel-2.jpg", "castle-hotel-3.jpg"]
+  },
+  {
+    "name": "Tropical Island Resort",
+    "description": "A tropical paradise with white sandy beaches and palm trees.",
+    "location": "Maldives",
+    "rating": 5,
+    "Price Range": "$$$$",
+    "amenities": ["Overwater Bungalows", "Diving", "Spa", "Beachfront Dining"],
+    "howToBook": "Book now at www.example.com/tropical-island-resort",
+    "images": ["tropical-island-resort-1.jpg", "tropical-island-resort-2.jpg"]
+  }
+]
