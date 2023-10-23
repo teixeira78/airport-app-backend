@@ -1,0 +1,97 @@
+/* ******** */
+/* Section Grid */
+/* ******** */
+
+.section-grid {
+  padding: 6rem 0 2rem 0;
+}
+
+.info-box {
+  position: relative;
+  display: inline-block;
+  border: 1px solid #eee;
+  padding: 1.5rem 1.5rem;
+  height: 11rem;
+  gap: 1rem;
+  transition: all 0.5s ease;
+}
+
+.info-box:hover {
+  box-shadow: 0 1rem 2rem rgba(0, 0, 0, 0.02);
+  background-color: #f8f9fa;
+}
+
+.info-box::before {
+  content: "";
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 0;
+  height: 1px;
+  background-color: #023e8a;
+  transition: width 0.5s ease;
+}
+
+.info-box:hover::before {
+  width: 100%;
+}
+
+.info-box-icon {
+  width: 50px;
+  height: 50px;
+}
+
+.info-text {
+  position: relative;
+}
+
+.info-box-title {
+  font-weight: 600;
+  font-size: 1.25rem;
+}
+
+.info-box-description {
+  font-weight: 300;
+  font-size: 0.75rem;
+}
+
+.info-box-link {
+  align-self: flex-end;
+}
+
+.arrow-icon,
+.info-box-link a {
+  transition: all 0.3s ease;
+}
+
+.arrow-icon {
+  cursor: pointer;
+}
+
+.info-box-link a {
+  color: #023e8a;
+  font-size: 0.75rem;
+  font-weight: 500;
+  border-bottom: 1px solid transparent;
+}
+
+.info-box-link a:hover {
+  color: #339af0;
+}
+
+.info-box:hover .arrow-icon {
+  color: #339af0;
+  transform: translateX(0.5rem);
+}
+
+/* ******** */
+/* SECTION NEWS  */
+/* ******** */
+
+.section-airport-news {
+  padding: 4rem 0 10rem 0;
+}
+
+.section-latest-news {
+  padding: 2rem 0 8rem 0;
+}

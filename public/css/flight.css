@@ -1,0 +1,56 @@
+.section-flight {
+  padding: 4rem 0 2rem 0;
+}
+
+.flight-search {
+  padding-bottom: 2rem;
+}
+
+.flight-table--head {
+  font-size: 1rem;
+  font-weight: 600;
+  color: #023e8a;
+}
+
+.flight-table--head th,
+.flight-table--body td {
+  text-align: center;
+  color: #023e8a;
+}
+
+.flight-table--body tr td {
+  padding: 1.8rem 0;
+}
+
+.flight-status--cell {
+  position: relative;
+}
+
+.flight--status {
+  display: inline-block;
+  position: absolute;
+  top: 0;
+  transform: translateX(-50%);
+  text-align: center;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  font-size: 12px;
+  width: 150px;
+  padding: 15px 0px;
+}
+
+.flight-table--body .flight--arrived {
+  background: #2b8a3e;
+  color: #fff;
+}
+
+.flight-table--body .flight--departed,
+.flight-table--body .flight--delayed {
+  background: #fcc419;
+  color: #000;
+}
+
+.flight-table--body .flight--cancelled {
+  background: #ef0107;
+  color: #000;
+}

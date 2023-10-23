@@ -1,0 +1,34 @@
+.section-info {
+  padding: 6rem 0 4rem 0;
+}
+
+.info-tab-container {
+  margin-bottom: 1rem;
+}
+
+.info-content {
+  display: none;
+}
+
+.info-content--active {
+  display: block;
+}
+
+.accordion-button {
+  font-weight: 600;
+}
+
+.accordion .accordion-button.collapsed {
+  background-color: #f4f4f6;
+}
+
+/* .accordion .accordion-button.collapsed:hover {
+  background-color: var(--secondary-blue);
+  color: #fff;
+}
+
+.accordion .accordion-button:not(.collapsed),
+.accordion .accordion-button:not(.collapsed):hover {
+  color: #fff;
+  background-color: var(--secondary-blue);
+} */
