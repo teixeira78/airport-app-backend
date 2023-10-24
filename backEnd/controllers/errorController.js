@@ -1,13 +1,14 @@
 const AppError = require('../utils/appError');
 
+// TODO: Handle Mongoose validation error, unhandled rejections and catch uncaught exceptions
+
 // Invalid ID
 const handleCastErrorDB = (err) => {
   const message = `Invalid ${err.path}: ${err.value}`;
   return new AppError(message, 400);
 };
 
-// "message": "E11000 duplicate key error collection: oxbAirport.hotels index: name_1 dup key: { name: \"Mountain View Lodge\" }"
-// From the error we want to return "name", so we can use regular expression to extract the value between quotes ("")
+// From the error return "name". Regular expression to extract the value between quotes ("")
 const handleDuplicateFieldDB = (err) => {
   const value = err.message.match(/(["'])(\\?.)*?\1/)[0];
   const message = `Duplicate field value: ${value} Please use another value!`;

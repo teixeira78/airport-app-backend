@@ -3,10 +3,13 @@ import pageView from './views/pageView';
 import navbarView from './views/navbarView';
 import swiperView from './views/swiperView';
 import model from './model';
+import Swiper from 'swiper';
+
+// TODO: Implement a sub-controller for each page
 
 class Controller {
   _pageName;
-  initialPage = 'homePage';
+  _initialPage = 'homePage';
 
   constructor() {
     window.addEventListener('hashchange', this._navigate);
@@ -17,13 +20,12 @@ class Controller {
     // 1) Fetch Page from url
     const pageContent = await model.fetchData(`${this._pageName}.html`);
 
-    console.log(pageContent);
+    window.scrollTo({ top: 0, behavior: 'instant' });
 
-    // 2) Render Page
-    // pageView.render(pageContent);
+    // 2) Add content to the Page
+    pageView.render(pageContent);
 
-    this.renderSwiper();
-
+    // 3) Render specific page
     this._pageMapping[this._pageName]();
   };
 
@@ -32,20 +34,16 @@ class Controller {
     this._loadPage(this._pageName);
   };
 
-  renderSwiper = () => {
-    // 1) Return if swiper container does not exist
-    if (!swiperView.checkSwiperExistence(pageView._parentElement)) return;
-
-    // 2) Initialize Swiper
-    swiperView.initializeSwiper();
-  };
-
   async renderHomePage() {
-    console.log('rendering Home ...');
-    const news = await model.fetchData(`${LOCAL_SERVER}/${NEWS_API}`, true);
-    console.log(`here`, news);
+    // 1) Fetch News data
+    const news = await model.fetchData(`${NEWS_API}`, true);
+
+    swiperView.setParentElement(pageView._parentElement);
+    swiperView.render(news.data);
+    swiperView._handleSwiper();
   }
 
+  // TODO: Implement mapping for the rest of the pages
   _pageMapping = {
     homePage: this.renderHomePage,
   };

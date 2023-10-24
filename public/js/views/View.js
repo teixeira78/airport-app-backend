@@ -6,9 +6,8 @@ export default class View {
     this._data = data;
     const markup = this._generateMarkup();
     this._clear();
-    this._parentElement.insertAdjacentHTML('afterbegin', markup);
 
-    window.scrollTo({ top: 0, behavior: 'instant' });
+    this._parentElement.insertAdjacentHTML('afterbegin', markup);
   }
 
   _clear() {
