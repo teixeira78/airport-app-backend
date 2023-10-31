@@ -1,0 +1,51 @@
+nav.navbar.navbar-expand-lg.bg-body-tranparent
+
+  .container.justify-content-between
+    a.navbar-brand.nav-link(href='/home')
+      svg#Layer_1.navbar-logo(xmlns='http://www.w3.org/2000/svg', viewBox='0 0 200 51.22')
+    button.navbar-toggler(type='button', data-bs-toggle='offcanvas', data-bs-target='#offcanvasNavbar', aria-controls='offcanvasNavbar', aria-expanded='false', aria-label='Toggle navigation')
+
+      span.navbar-menu-toggler
+        ion-icon.menu-toggler-icon(name='menu-outline')
+    #offcanvasNavbar.offcanvas.offcanvas-end.flex-grow-0(tabindex='-1', aria-labelledby='offcanvasNavbarLabel')
+
+      .offcanvas-header
+        a.navbar-brand.nav-item(href='#')
+          svg#Layer_1.navbar-logo(xmlns='http://www.w3.org/2000/svg', viewBox='0 0 200 51.22')
+        button.btn--close(type='button', data-bs-dismiss='offcanvas', aria-label='Close')
+          ion-icon.btn-close--icon(name='close-outline')
+
+      .offcanvas-body
+        ul.navbar-nav
+          li.nav-item
+            a.nav-link(href='#/guide')  Airport Guide
+
+          li.nav-item
+            a.nav-link(aria-current='page', href='#/flight')
+              | flights
+
+          li.nav-item
+            a.nav-link(aria-current='page', href='#/explore') Discover
+
+          li.nav-item
+            a.nav-link(aria-current='page', href='#/aboutUs') About Us
+
+        form.d-flex.d-lg-none.nav-item(role='search')
+          input#offcanvas-search--Form.form-control(type='search', placeholder='Search', aria-label='Search')
+          button.btn.btn-search--dropdown.btn-primary(type='button')
+            ion-icon.search-icon.search(name='search-outline')
+
+    .d-none.d-lg-block.nav-link.search-hover.dropdown.dropdown-hover.position-static
+      ion-icon.search-icon.search-icon--nav.dropdown-toggle(name='search-outline', data-bs-toggle='dropdown', aria-expanded='false')
+
+      // dropdown Menu
+      .dropdown-menu.search-dropdown.w-100.mt-0(aria-label='navbarDropdown')
+        .container
+          .row.my-4
+            .col
+              .input-group
+                .form-outline
+                  input#search-focus.form-control.search-input--dropdown(type='search')
+                  label.form-label(for='search-focus') Search
+                button.btn.btn-search--dropdown.btn-primary(type='button')
+                  ion-icon.search-icon.search(name='search-outline')

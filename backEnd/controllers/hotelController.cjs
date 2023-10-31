@@ -1,5 +1,5 @@
-const Hotel = require('../models/hotelModel');
-const factory = require('./handlerFactory');
+const Hotel = require('../models/hotelModel.cjs');
+const factory = require('./handlerFactory.cjs');
 
 exports.getAllHotels = factory.getAll(Hotel);
 exports.getHotel = factory.getOne(Hotel);

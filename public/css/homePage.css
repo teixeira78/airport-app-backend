@@ -22,7 +22,7 @@
 }
 
 .info-box::before {
-  content: "";
+  content: '';
   position: absolute;
   bottom: 0;
   left: 0;
@@ -89,9 +89,11 @@
 /* ******** */
 
 .section-airport-news {
+  overflow: hidden;
   padding: 4rem 0 10rem 0;
 }
 
 .section-latest-news {
+  overflow: hidden;
   padding: 2rem 0 8rem 0;
 }

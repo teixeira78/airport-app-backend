@@ -1,5 +1,5 @@
-const News = require('../models/newsModel');
-const factory = require('./handlerFactory');
+const News = require('../models/newsModel.cjs');
+const factory = require('./handlerFactory.cjs');
 
 exports.getAllNews = factory.getAll(News);
 exports.getNews = factory.getOne(News);

@@ -1,9 +1,8 @@
 const fs = require('fs');
 const mongoose = require('mongoose');
 const dotenv = require('dotenv');
-const News = require('./../../models/newsModel');
-const Hotel = require('./../../models/hotelModel');
-const { dirname } = require('path');
+const News = require('../models/newsModel.cjs');
+const Hotel = require('../models/hotelModel.cjs');
 
 dotenv.config({ path: './config.env' });
 

@@ -6,3 +6,6 @@ public/images/
 .cache
 package-lock.json
 dist/
+.babelrc.json
+.vscode
+.parcel-cache

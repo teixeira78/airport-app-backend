@@ -1,6 +1,6 @@
-const AppError = require('../utils/appError');
+const AppError = require('../utils/appError.cjs');
 
-// TODO: Handle Mongoose validation error, unhandled rejections and catch uncaught exceptions
+// [x]: Handle Mongoose validation error, unhandled rejections and catch uncaught exceptions
 
 // Invalid ID
 const handleCastErrorDB = (err) => {
@@ -12,6 +12,13 @@ const handleCastErrorDB = (err) => {
 const handleDuplicateFieldDB = (err) => {
   const value = err.message.match(/(["'])(\\?.)*?\1/)[0];
   const message = `Duplicate field value: ${value} Please use another value!`;
+  return new AppError(message, 400);
+};
+
+const handleValidationErrorDB = (err) => {
+  const errors = Object.values(err.errors).map((el) => el.message);
+
+  const message = `Invalid input data. ${errors.join('; ')}`;
   return new AppError(message, 400);
 };
 
@@ -55,7 +62,8 @@ module.exports = (err, req, res, next) => {
   } else if (process.env.NODE_ENV === 'production') {
     if (err.name === 'CastError') err = handleCastErrorDB(err);
     if (err.code === 11000) err = handleDuplicateFieldDB(err);
-    // console.log(err.code);
+    if (err.name === 'ValidationError') err = handleValidationErrorDB(err);
+
     sendErrorProd(err, res);
   }
 };

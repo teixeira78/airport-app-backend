@@ -45,6 +45,7 @@ const hotelSchema = new mongoose.Schema(
   },
 );
 
+// Generate slug for the model
 hotelSchema.pre('save', function (next) {
   this.slug = slugify(this.name, { lower: true });
   next();

@@ -121,11 +121,11 @@
     text-align: center;
   }
 
-  .section-latest-news > .container-fluid > .container-text {
+  .section-latest-news > .container > .container-text {
     order: 1;
   }
 
-  .section-latest-news > .container-fluid > .left-swiper {
+  .section-latest-news > .container > .left-swiper {
     order: 2;
   }
 

@@ -17,7 +17,15 @@ const newsSchema = new mongoose.Schema(
     author: String,
     publishDate: {
       type: Date,
-      // required: [true, "News must have a publication date "],
+      // required: [true, 'News must have a publication date '],
+    },
+    type: {
+      type: String,
+      required: [true, 'News must have a type'],
+      enum: {
+        values: ['national', 'airport'],
+        message: 'News type is either: national or aiport',
+      },
     },
     source: {
       type: String,
@@ -26,7 +34,11 @@ const newsSchema = new mongoose.Schema(
     content: {
       type: String,
       required: [true, 'News must have a content'],
-      // minlength: [100, "News content must contain at least 100 characters"],
+      // minlength: [100, 'News content must contain at least 100 characters'],
+    },
+    coverImg: {
+      type: String,
+      // required: [true, 'News must have a cover image']
     },
     createdAt: {
       type: Date,
@@ -38,12 +50,14 @@ const newsSchema = new mongoose.Schema(
   },
 );
 
+// Generate slug for the model
 newsSchema.pre('save', function (next) {
-  this.slug = slugify(this.title, { lower: true });
+  // Remove any non-alphanumeric characters before slugify
+  const cleanedTitle = this.title.replace(/[^a-zA-Z0-9\s-]/g, '').toLowerCase();
+  this.slug = slugify(cleanedTitle, { lower: true });
   next();
 });
 
-// Singular as it is just "1 News"
 const News = mongoose.model('News', newsSchema);
 
 module.exports = News;

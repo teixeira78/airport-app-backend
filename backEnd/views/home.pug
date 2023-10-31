@@ -1,0 +1,124 @@
+extends base
+
+block append head 
+  script(src='https://cdn.jsdelivr.net/npm/swiper@10/swiper-bundle.min.js') 
+  link(rel="stylesheet",href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css")
+
+mixin card(news)
+  .swiper-slide.card
+    a(href=`news/${news.slug}`) 
+      img.card-img-top(src=`images/news/${news.coverImg}.jpg` ,alt=`${news.title}`)
+      .card-body.d-flex.flex-column
+        h5.card-title= news.title
+        p.card-text= news.content
+
+block content 
+  section.section-grid.position-relative
+    .container
+      .row.mb-5.g-5
+
+        .col-lg-4.col-md-6  
+          .info-box.d-flex
+            img.info-box-icon(src='images/Icon/passport-svgrepo-com.svg', alt='Passport icon')
+            .info-text.d-flex.flex-column.align-items-start
+              h6.info-box-title Immigration &amp; Visa
+              p.info-box-description
+                | Lorem ipsum dolor sit amet consectetur.
+              .info-box-link.d-flex.justify-content-center.align-items-center.gap-2
+                a(href='#') Read more 
+                ion-icon.arrow-icon(name='arrow-forward-outline')
+
+        .col-lg-4.col-md-6
+          .info-box.d-flex
+            img.info-box-icon(src='images/Icon/checkin-icon.svg', alt='Passport icon')
+            .info-text.d-flex.flex-column.align-items-start
+              h6.info-box-title Check-in
+              p.info-box-description
+                | Lorem ipsum dolor sit, amet consectetur.
+              .info-box-link.d-flex.justify-content-center.align-items-center.gap-2
+                a(href='#') Read more 
+                ion-icon.arrow-icon(name='arrow-forward-outline')
+
+        .col-lg-4.col-md-6
+          .info-box.d-flex
+            img.info-box-icon(src='images/Icon/health-svgrepo-com.svg', alt='Passport icon')
+            .info-text.d-flex.flex-column.align-items-start
+              h6.info-box-title Health Guide
+              p.info-box-description
+                | Lorem ipsum dolor sit, amet consectetur adipisicing.
+              .info-box-link.d-flex.justify-content-center.align-items-center.gap-2
+                a(href='#') Read more 
+                ion-icon.arrow-icon(name='arrow-forward-outline')
+
+        .col-lg-4.col-md-6
+          .info-box.d-flex
+            img.info-box-icon(src='images/Icon/security-icon.svg', alt='Passport icon')
+            .info-text.d-flex.flex-column.align-items-start
+              h6.info-box-title Security Screening
+              p.info-box-description
+                | Lorem ipsum dolor sit, amet consectetur adipisicing .
+              .info-box-link.d-flex.justify-content-center.align-items-center.gap-2
+                a(href='#') Read more 
+                ion-icon.arrow-icon(name='arrow-forward-outline')
+
+        .col-lg-4.col-md-6
+          .info-box.d-flex
+            img.info-box-icon(src='images/Icon/5215a-baggage-claim-svgrepo-com.svg', alt='Passport icon')
+            .info-text.d-flex.flex-column.align-items-start
+              h6.info-box-title Baggage Claim
+              p.info-box-description
+                | Lorem ipsum dolor sit, amet consectetur adipisicing elit.
+              .info-box-link.d-flex.justify-content-center.align-items-center.gap-2
+                a(href='#') Read more 
+                ion-icon.arrow-icon(name='arrow-forward-outline')
+
+        .col-lg-4.col-md-6
+          .info-box.d-flex
+            img.info-box-icon(src='images/Icon/parking-taxi-icon.svg', alt='Passport icon')
+            .info-text.d-flex.flex-column.align-items-start
+              h6.info-box-title Parking &amp; Transport
+              p.info-box-description
+                | Lorem ipsum dolor sit, amet consectetur.
+              .info-box-link.d-flex.justify-content-center.align-items-center.gap-2
+                a(href='#') Read more 
+                ion-icon.arrow-icon(name='arrow-forward-outline')
+
+  section.section-airport-news
+    .container.swiper-container.d-flex.justify-content-center.align-items-center.container-section
+      .container-text.pad-left
+        h3.sub-heading News
+        h2.heading-secondary Airport News
+        p.text-box--description
+          | Lorem ipsum dolor sit amet, consectetur adipisicing elit. Rem
+          | reiciendis.
+
+      // Swiper
+      .swiper.right-swiper
+        .swiper-wrapper
+          each news in airportNews
+            +card(news)
+
+        .swiper-scrollbar
+
+  section.section-latest-news
+    .container.swiper-container.d-flex.justify-content-center.align-items-center.container-section
+      // Swiper
+      .swiper.left-swiper
+        .swiper-wrapper
+          each news in latestNews 
+            +card(news)
+
+        .swiper-scrollbar
+
+      .container-text.pad-right
+        h3.sub-heading News
+        h2.heading-secondary Latest News
+        p.text-box--description
+          | Lorem ipsum dolor sit amet, consectetur adipisicing elit. Rem
+          | reiciendis.
+
+  section.section-disclaimer
+    .container
+      h2.heading-mini Disclaimer
+      p.text-mini
+        | Lorem ipsum dolor, sit amet consectetur adipisicing elit.

@@ -2,12 +2,14 @@
   "name": "airportoxb",
   "version": "1.0.0",
   "description": "Web app of the international OXB airport ",
+  "type": "module",
+  "main": "public/js/bundle.js",
   "scripts": {
-    "start": "concurrently \"npm:client\" \"npm:server\"",
-    "client": "parcel public/html/main.html",
-    "server": "nodemon backEnd/server.js",
-    "start:prod": "set NODE_ENV=production && nodemon backEnd/server.js",
-    "build": "parcel build public/html/main.html"
+    "build": "parcel build public/js/controller.js",
+    "watch:js": "parcel watch public/js/controller.js",
+    "start": "nodemon backEnd/server.cjs",
+    "debug": "ndb backEnd/server.cjs",
+    "start:prod": "set NODE_ENV=production && nodemon backEnd/server.cjs"
   },
   "repository": {
     "type": "git",
@@ -33,11 +35,19 @@
     "mongoose": "^7.6.3",
     "morgan": "^1.10.0",
     "nodemailer": "^6.9.7",
+    "pug": "^3.0.2",
     "slugify": "^1.6.6",
-    "swiper": "^10.3.1",
+    "swiper": "^11.0.3",
     "validator": "^13.11.0"
   },
   "devDependencies": {
+    "@babel/core": "^7.23.2",
+    "@babel/eslint-parser": "^7.22.15",
+    "@babel/plugin-proposal-class-properties": "^7.18.6",
+    "@babel/plugin-proposal-object-rest-spread": "^7.20.7",
+    "@babel/preset-env": "^7.23.2",
+    "@babel/preset-react": "^7.22.15",
+    "babel-eslint": "^10.1.0",
     "concurrently": "^8.2.2",
     "eslint": "^8.52.0",
     "eslint-config-airbnb": "^19.0.4",
@@ -48,6 +58,7 @@
     "eslint-plugin-node": "^11.1.0",
     "eslint-plugin-prettier": "^5.0.1",
     "eslint-plugin-react": "^7.33.2",
+    "parcel": "^2.10.1",
     "parcel-plugin-clean-dist": "^0.0.6",
     "prettier": "^3.0.3"
   }

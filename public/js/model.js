@@ -1,17 +1,47 @@
-import { LOCAL_SERVER } from './settings';
+import { LOCAL_HOST, METADATA_ENDPOINT } from './config';
 
-export class Model {
-  _data;
+export const state = {
+  search: {
+    page: 1,
+  },
+};
 
-  async fetchData(url, shouldParse = false) {
-    try {
-      const response = await fetch(`${LOCAL_SERVER}/${url}`);
-      const data = await response.text();
-      return shouldParse ? JSON.parse(data) : data;
-    } catch (err) {
-      console.error(err);
-    }
+export const getMetadata = async function () {
+  try {
+    // 1) Send HTTP request for metadata
+    const response = await fetch(`${LOCAL_HOST}/${METADATA_ENDPOINT}`);
+    const data = await response.json();
+
+    // 2) Asign response to state.search
+    state.search.newsCount = data.metadata.newsCount;
+  } catch (err) {
+    console.log(err);
   }
-}
+};
 
-export default new Model();
+export const loadSearchResultsPage = async function (
+  currentHref,
+  limit,
+  page = state.search.page,
+) {
+  try {
+    state.search.page = page;
+
+    // 1) Send HTTP request to server with params for pagination
+    const apiUrl = `${currentHref}?page=${page}&limit=${limit}`;
+    const response = await fetch(apiUrl, {
+      headers: {
+        Accept: 'application/json',
+      },
+    });
+    const data = await response.json();
+
+    // 2) Assign store data into state object
+    state.search.results = data.news;
+
+    // 3)
+    return data;
+  } catch (err) {
+    console.log(err);
+  }
+};

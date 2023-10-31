@@ -1,52 +1,36 @@
-import { LOCAL_SERVER, NEWS_API, HOTEL_API } from './settings';
-import pageView from './views/pageView';
-import navbarView from './views/navbarView';
+import * as model from './model';
 import swiperView from './views/swiperView';
-import model from './model';
-import Swiper from 'swiper';
+import paginationView from './views/paginationView';
 
-// TODO: Implement a sub-controller for each page
+// FIXME: IMPLEMENT ERROR HANDLING
 
 class Controller {
-  _pageName;
-  _initialPage = 'homePage';
-
   constructor() {
-    window.addEventListener('hashchange', this._navigate);
-    this._navigate();
+    this.init();
   }
 
-  _loadPage = async () => {
-    // 1) Fetch Page from url
-    const pageContent = await model.fetchData(`${this._pageName}.html`);
+  async controlPagination(pageLimit, goToPage) {
+    // 1) Get Href for http request and pagination params
+    const currentHref = window.location.href;
 
-    window.scrollTo({ top: 0, behavior: 'instant' });
+    // 2) Send data to server for http request
+    await model.loadSearchResultsPage(currentHref, pageLimit, goToPage);
 
-    // 2) Add content to the Page
-    pageView.render(pageContent);
-
-    // 3) Render specific page
-    this._pageMapping[this._pageName]();
-  };
-
-  _navigate = () => {
-    this._pageName = location.hash.replace('#/', '') || this._initialPage;
-    this._loadPage(this._pageName);
-  };
-
-  async renderHomePage() {
-    // 1) Fetch News data
-    const news = await model.fetchData(`${NEWS_API}`, true);
-
-    swiperView.setParentElement(pageView._parentElement);
-    swiperView.render(news.data);
-    swiperView._handleSwiper();
+    // 3) Render NEW results
+    paginationView.render(model.state.search);
   }
 
-  // TODO: Implement mapping for the rest of the pages
-  _pageMapping = {
-    homePage: this.renderHomePage,
-  };
+  async init() {
+    await model.getMetadata();
+    paginationView.addHandlerClick(this.controlPagination, model.state.search);
+    swiperView.initSwiper();
+  }
 }
 
+// if (this.swipers) swiperView.initSwiper(this.swipers);
+// if (this.paginationBtns) {
+//   paginationView.handlePagination(this.paginationBtns);
+// }
+
+// eslint-disable-next-line no-unused-vars
 const controller = new Controller();
