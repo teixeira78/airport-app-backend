@@ -11,6 +11,14 @@
   .card-text {
     font-size: 12px;
   }
+
+  .news-title--mini {
+    font-size: 14px;
+  }
+
+  /* .news-row {
+    flex-direction: column;
+  } */
 }
 
 @media (max-width: 991px) {
@@ -82,6 +90,22 @@
 
   .explore .row .text-box {
     padding: 0;
+  }
+
+  .news-box {
+    height: 10rem;
+  }
+
+  .news-side-nav {
+    justify-content: space-between;
+  }
+
+  .news-side-nav--title {
+    display: block !important;
+  }
+
+  .news-row {
+    --mdb-gutter-y: 5rem;
   }
 }
 
@@ -186,6 +210,15 @@
     gap: 0.6rem;
   }
 
+  /* NEWS PAGE */
+  .news-heading {
+    font-size: 2rem !important;
+  }
+
+  .news-img-container {
+    height: 20rem !important;
+  }
+
   /* FLIGHT PAGE */
   .flight-table--head .flight-airline-name,
   .flight-table--body .flight-airline-name--cell {
@@ -265,6 +298,11 @@
 
   .info-tab-container .btn-tab {
     font-size: 0.8rem;
+  }
+
+  /* NEWS PAGE */
+  .news-heading {
+    font-size: 1.6rem !important;
   }
 
   /* FLIGHT PAGE */

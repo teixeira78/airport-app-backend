@@ -2,8 +2,8 @@ import * as model from './model';
 import swiperView from './views/swiperView';
 import paginationView from './views/paginationView';
 
-// FIXME: IMPLEMENT ERROR HANDLING
-
+// TODO: IMPLEMENT ERROR HANDLING
+// TODO: ADD NAVBAR VIEW FOR STICKY NAV
 class Controller {
   constructor() {
     this.init();
@@ -26,11 +26,6 @@ class Controller {
     swiperView.initSwiper();
   }
 }
-
-// if (this.swipers) swiperView.initSwiper(this.swipers);
-// if (this.paginationBtns) {
-//   paginationView.handlePagination(this.paginationBtns);
-// }
 
 // eslint-disable-next-line no-unused-vars
 const controller = new Controller();

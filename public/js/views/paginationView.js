@@ -31,11 +31,9 @@ class PaginationView extends View {
       if (!clickedBtn) return;
 
       // Update the current page based on the button clicked
-      if (clickedBtn.classList.contains('btn-pagination--next')) {
-        this._currentPage += 1;
-      } else {
-        this._currentPage -= 1;
-      }
+      this._currentPage += clickedBtn.classList.contains('btn-pagination--next')
+        ? 1
+        : -1;
 
       // 3) Invoke the provided handler with updated page and limit information
       handler(this._pageLimit, this._currentPage);
@@ -75,7 +73,7 @@ class PaginationView extends View {
     // Generate and return markup for rendering news items
     const html = this._data.results.map(
       (news) => `
-      <a href="${news.slug}"> 
+      <a href="${news.slug}" class="col-xl-12 col-md-6 col-sm-12"> 
         <div class="news-box row"> 
           <div class="col-6">
             <div class="news-description">

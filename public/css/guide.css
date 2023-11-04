@@ -1,0 +1,84 @@
+.section-guide {
+  margin-top: 8rem;
+  margin-bottom: 5rem;
+  padding: 0 5rem;
+}
+
+.nav-tab {
+  border-bottom: 1px solid #e9ecef;
+}
+
+.nav-tab--link {
+}
+
+.nav-tab--link a {
+  display: block;
+  transition: all 0.3s ease;
+  height: 3rem;
+}
+
+.nav-tab--link a:link,
+.nav-tab--link a:visited {
+  color: #023d8a;
+  font-weight: 600;
+  font-size: 1.1rem;
+}
+
+.nav-tab--link a:active,
+.nav-tab--link a:hover {
+  color: #48dce4;
+}
+
+.nav-tab--link a:active {
+  border-bottom: 2px solid #48dce4;
+}
+
+.nav-tab--link a:active {
+  border-bottom: 1px solid #023d8a;
+}
+
+.guide-title {
+  font-size: 3rem;
+  font-weight: 600;
+  margin-bottom: 1.2rem;
+}
+
+.guide-intro-text {
+  font-size: 1.3rem;
+  color: rgb(99, 111, 153);
+  padding-left: 1rem;
+}
+
+.guide-intro {
+  margin-bottom: 5rem;
+  justify-content: space-between;
+  align-items: start;
+}
+
+.nav-tab {
+  list-style: none;
+  display: flex;
+  gap: 3rem;
+  align-items: center;
+  padding: 0;
+  margin-bottom: 3rem;
+}
+
+.guide-text-box {
+  padding-top: 7rem;
+  margin-bottom: 2rem;
+}
+
+.guide-summary {
+  width: 75%;
+  margin-bottom: 3rem;
+  color: rgb(99, 111, 153);
+}
+
+.health-img-container {
+  width: 35rem;
+}
+
+.health-img-container img {
+  width: 100%;
+}

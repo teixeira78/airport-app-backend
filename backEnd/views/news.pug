@@ -4,7 +4,7 @@ block append head
   link(rel="stylesheet", href="/css/news.css")
 
 mixin newsBox(singleNews)
-  a(href=`${singleNews.slug}`) 
+  a(href=`${singleNews.slug}`).col-xl-12.col-md-6.col-sm-12
     .news-box.row 
       .col-6
         .news-description
@@ -16,18 +16,19 @@ mixin newsBox(singleNews)
 
 block content 
   .container.news-container
-    .row
-      .col-8
+    .row.news-row.g-5
+      .col-xl-8.col-sm-12.news-current
         p.heading-mini.news.my-2= `${currentNews.type} news`
         h2.news-heading= currentNews.title
         .news-img-container
           img.news-img(src=`/images/news/${currentNews.coverImg}.jpg` alt=`${currentNews.title}`)
         p.news-content= currentNews.content
-        p.author.mt-5= currentNews.author
+        p.author.mt-4= currentNews.author
         p.publish-date= currentNews.publishDate.toLocaleString('en-us', {month: 'long', year: 'numeric'})
 
-      .col-4.news-side-nav
-        .news-side-nav--preview
+      .col-xl-4.col-sm-12.news-side-nav
+        h4.news-side-nav--title Related Stories
+        .row.gx-5.news-side-nav--preview
           each singleNews in news 
             +newsBox(singleNews)
 

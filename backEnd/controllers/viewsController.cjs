@@ -27,10 +27,6 @@ exports.getNews = catchAsync(async (req, res) => {
 
   const news = await features.query;
 
-  // const newsLength = await News.countDocuments({
-  //   slug: { $ne: currentNews.slug },
-  // });
-
   if (req.accepts('html')) {
     res.status(200).render('news', {
       title: currentNews.title,

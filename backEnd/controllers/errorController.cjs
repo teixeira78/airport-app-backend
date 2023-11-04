@@ -1,7 +1,5 @@
 const AppError = require('../utils/appError.cjs');
 
-// [x]: Handle Mongoose validation error, unhandled rejections and catch uncaught exceptions
-
 // Invalid ID
 const handleCastErrorDB = (err) => {
   const message = `Invalid ${err.path}: ${err.value}`;

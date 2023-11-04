@@ -1,6 +1,6 @@
 /* eslint-disable no-undef */
 
-// FIXME: Need to implement card counter - swiper-left starts from last card
+// FIXME: LEFT SWIPPER SHOULD BE STARTING FROM LAST CARD
 class SwiperView {
   swipers = document.querySelectorAll('.swiper');
 

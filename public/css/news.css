@@ -17,7 +17,7 @@
 }
 
 .news-heading {
-  font-size: 2.55rem;
+  font-size: 2.3rem;
   font-weight: 500;
   text-transform: capitalize;
   margin-bottom: 2rem;
@@ -29,6 +29,26 @@
 
 .publish-date {
   font-size: 12px;
+}
+
+.news-side-nav a {
+  display: inline-block;
+  transition: all 0.3 ease;
+}
+
+.news-side-nav a:link,
+.news-side-nav a:visited,
+.news-side-nav a:active {
+  color: #023e8a;
+}
+
+.news-side-nav a:hover {
+  color: #3b71ca;
+}
+
+.news-side-nav--title {
+  display: none;
+  margin-bottom: 1.2rem;
 }
 
 .news-box {
