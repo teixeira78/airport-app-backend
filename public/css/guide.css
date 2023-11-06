@@ -114,16 +114,3 @@
   object-fit: cover;
   max-width: 100%;
 }
-
-.accordion-button {
-  padding: 2rem;
-  font-weight: 600;
-}
-
-.accordion-button:not(.collapsed) {
-  color: #023d8a;
-}
-
-.accordion-description {
-  color: rgb(99, 111, 153);
-}

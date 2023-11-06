@@ -382,6 +382,33 @@ a:visited {
 }
 
 /* ******** */
+/* ACCORDION */
+/* ******** */
+
+.accordion {
+  box-shadow: rgba(0, 0, 0, 0.16) 0px 3px 5px;
+}
+
+.accordion-button {
+  padding: 2rem;
+  font-weight: 600;
+  transition: all 0.3s ease;
+  border-bottom: none;
+}
+
+.accordion-button:hover {
+  background-color: rgba(2, 60, 136, 0.08);
+}
+
+.accordion-button:not(.collapsed) {
+  color: #023d8a;
+}
+
+.accordion-description {
+  color: rgb(99, 111, 153);
+}
+
+/* ******** */
 /* Section Disclaimer */
 /* ******** */
 
