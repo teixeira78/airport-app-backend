@@ -1,13 +1,21 @@
 const News = require('../models/newsModel.cjs');
+const Guide = require('../models/guideModel.cjs');
 const APIFeatures = require('../utils/apiFeature.cjs');
 const catchAsync = require('../utils/catchAsync.cjs');
 
 exports.getHome = catchAsync(async (req, res) => {
-  // 1) Get news data from collection
-  const data = await News.find();
+  // 1) Get data from collection
+  const newsData = await News.find();
+  const guidesData = await Guide.find();
 
-  const latestNews = data.filter((news) => news.type === 'national');
-  const airportNews = data.filter((news) => news.type === 'airport');
+  const latestNews = newsData.filter((news) => news.type === 'national');
+  const airportNews = newsData.filter((news) => news.type === 'airport');
+  const guides = guidesData.map((el) => ({
+    slug: el.slug,
+    title: el.title,
+    subtitle: el.subtitle,
+    icon: el.icon,
+  }));
 
   // 2) Build template
   // 3) Render the template using news data from 1)
@@ -15,6 +23,7 @@ exports.getHome = catchAsync(async (req, res) => {
     title: 'Welcome',
     latestNews,
     airportNews,
+    guides,
   });
 });
 
@@ -48,4 +57,20 @@ exports.getNews = catchAsync(async (req, res) => {
       news: reducedNews,
     });
   }
+});
+
+exports.getGuide = catchAsync(async (req, res) => {
+  const currentGuide = await Guide.findOne({ slug: req.params.slug });
+
+  const guideData = await Guide.find();
+  const guides = guideData.map((el) => ({
+    slug: el.slug,
+    title: el.title,
+  }));
+
+  res.status(200).render('guide', {
+    title: currentGuide.title,
+    currentGuide,
+    guides,
+  });
 });

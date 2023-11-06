@@ -1,5 +1,5 @@
 const mongoose = require('mongoose');
-const slugify = require('slugify');
+const helper = require('../utils/helper.cjs');
 
 const newsSchema = new mongoose.Schema(
   {
@@ -52,9 +52,7 @@ const newsSchema = new mongoose.Schema(
 
 // Generate slug for the model
 newsSchema.pre('save', function (next) {
-  // Remove any non-alphanumeric characters before slugify
-  const cleanedTitle = this.title.replace(/[^a-zA-Z0-9\s-]/g, '').toLowerCase();
-  this.slug = slugify(cleanedTitle, { lower: true });
+  this.slug = helper.slugifyTitle(this.title);
   next();
 });
 

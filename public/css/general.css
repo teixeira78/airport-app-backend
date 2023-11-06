@@ -446,6 +446,14 @@ a:visited {
   font-size: 14px;
 }
 
+.footer-pattern-2 {
+  fill: #48cae4;
+}
+
+.footer-pattern-1 {
+  fill: #fff;
+}
+
 .footer-heading {
   text-transform: uppercase;
   letter-spacing: 0.2px;

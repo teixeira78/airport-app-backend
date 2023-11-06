@@ -1,14 +1,11 @@
 .section-guide {
   margin-top: 8rem;
-  margin-bottom: 5rem;
-  padding: 0 5rem;
+  margin-bottom: 8rem;
+  overflow: hidden;
 }
 
 .nav-tab {
   border-bottom: 1px solid #e9ecef;
-}
-
-.nav-tab--link {
 }
 
 .nav-tab--link a {
@@ -19,9 +16,10 @@
 
 .nav-tab--link a:link,
 .nav-tab--link a:visited {
-  color: #023d8a;
+  white-space: nowrap;
+  color: rgb(2, 60, 136);
   font-weight: 600;
-  font-size: 1.1rem;
+  font-size: 1rem;
 }
 
 .nav-tab--link a:active,
@@ -29,12 +27,12 @@
   color: #48dce4;
 }
 
-.nav-tab--link a:active {
-  border-bottom: 2px solid #48dce4;
+.active {
+  color: #48dce4 !important;
 }
 
-.nav-tab--link a:active {
-  border-bottom: 1px solid #023d8a;
+.disable-link {
+  pointer-events: none;
 }
 
 .guide-title {
@@ -47,10 +45,11 @@
   font-size: 1.3rem;
   color: rgb(99, 111, 153);
   padding-left: 1rem;
+  width: 75%;
 }
 
 .guide-intro {
-  margin-bottom: 5rem;
+  margin-bottom: 6rem;
   justify-content: space-between;
   align-items: start;
 }
@@ -58,10 +57,39 @@
 .nav-tab {
   list-style: none;
   display: flex;
-  gap: 3rem;
+  gap: 2rem;
   align-items: center;
   padding: 0;
-  margin-bottom: 3rem;
+}
+
+.scrollbox {
+  overflow-x: auto;
+  overscroll-behavior-inline: contain;
+  margin-bottom: 1rem;
+}
+
+.scrollbox::-webkit-scrollbar {
+  width: 5px;
+  height: 0.2rem;
+}
+
+.scrollbox::-webkit-scrollbar-track {
+  background: #f1f1f1;
+}
+
+/* Thumb (the draggable part) */
+.scrollbox::-webkit-scrollbar-thumb {
+  background: #888;
+  border-radius: 1rem;
+}
+
+/* Handle the hover state of the thumb */
+.scrollbox::-webkit-scrollbar-thumb:hover {
+  background: #888;
+}
+
+.nav-tab--link a {
+  font-size: 1.2rem;
 }
 
 .guide-text-box {
@@ -75,10 +103,27 @@
   color: rgb(99, 111, 153);
 }
 
-.health-img-container {
-  width: 35rem;
+.guide-img-container {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  /* overflow: hidden; */
 }
 
-.health-img-container img {
-  width: 100%;
+.guide-img-container img {
+  object-fit: cover;
+  max-width: 100%;
+}
+
+.accordion-button {
+  padding: 2rem;
+  font-weight: 600;
+}
+
+.accordion-button:not(.collapsed) {
+  color: #023d8a;
+}
+
+.accordion-description {
+  color: rgb(99, 111, 153);
 }

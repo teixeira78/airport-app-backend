@@ -53,9 +53,11 @@ class $f510c7f00c68230c$var$SwiperView {
     handleSwiper(swiper) {
         this.swiperContainer = new Swiper(swiper, {
             direction: "horizontal",
-            centeredSlides: false,
+            centeredSlides: true,
             initialSlide: 0,
             grabCursor: true,
+            spaceBetween: 30,
+            slidesPerView: "auto",
             scrollbar: {
                 el: this.swiperScrollbar,
                 draggable: true,
@@ -63,6 +65,7 @@ class $f510c7f00c68230c$var$SwiperView {
             },
             breakpoints: {
                 575: {
+                    spaceBetween: 30,
                     slidesPerView: 2
                 },
                 768: {
@@ -72,7 +75,8 @@ class $f510c7f00c68230c$var$SwiperView {
                 992: {
                     spaceBetween: 30,
                     slidesPerView: "auto",
-                    slidesPerGroup: 1
+                    slidesPerGroup: 1,
+                    centeredSlides: false
                 }
             }
         });
@@ -100,6 +104,7 @@ class $f2fc15954219e5db$export$2e2bcd8739ae039 {
 }
 
 
+// FIXME: Pagination button not working properly on mobile;
 class $5548e641de1782a7$var$PaginationView extends (0, $f2fc15954219e5db$export$2e2bcd8739ae039) {
     // DOM elements for pagination
     _parentElement = document.querySelector(".news-side-nav--preview");

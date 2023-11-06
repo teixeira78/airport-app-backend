@@ -1,0 +1,38 @@
+extends base 
+
+block append head 
+  link(rel='stylesheet', href='/css/guide.css')
+
+mixin navTabLink(guide)
+  li.nav-tab--link
+    a(href=`${guide.slug}`, class = `${guide.slug === currentGuide.slug ? 'active' : ''} ${guide.slug === currentGuide.slug ? 'disable-link': ''}`)=guide.title
+
+mixin accordion(item, index)
+  .accordion-item
+    h2.accordion-header.sub-heading
+      button.accordion-button(type='button' data-bs-toggle='collapse' data-bs-target=`#collapse${index}` aria-expanded= `${index === 0 ? true : false}` aria-controls=`collapse${index}`)= item.title
+    .accordion-collapse.collapse(class= `${index === 0 ? 'show' : '' }`, id=`collapse${index}`, data-bs-parent='#accordion-section1')
+      .accordion-body
+        p.accordion-description= item.content
+
+block content 
+  section.section-guide.container
+    .guide-intro.row
+      .col-sm-12.col-lg-6
+        .guide-text-box
+          h2.guide-title= currentGuide.title
+          p.guide-intro-text= currentGuide.subtitle 
+      .col-sm-12.col-lg-6
+        .guide-img-container
+          img(src=`/images/guide/${currentGuide.coverImg}` alt='')
+    .guide-content
+      .scrollbox
+        ul.nav-tab
+          each guide, i in guides 
+            +navTabLink(guide)
+
+      p.guide-summary= currentGuide.description
+      .info-content
+        #accordion-section1.accordion.accordion-flush
+          each item, index in currentGuide.accordionItems
+            +accordion(item, index)

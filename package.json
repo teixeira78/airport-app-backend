@@ -9,7 +9,9 @@
     "watch:js": "parcel watch public/js/controller.js",
     "start": "nodemon backEnd/server.cjs",
     "debug": "ndb backEnd/server.cjs",
-    "start:prod": "set NODE_ENV=production && nodemon backEnd/server.cjs"
+    "start:prod": "set NODE_ENV=production && nodemon backEnd/server.cjs",
+    "import-data": "node backEnd/dev-data/import-dev-data.cjs --import",
+    "delete-data": "node backEnd/dev-data/import-dev-data.cjs --delete"
   },
   "repository": {
     "type": "git",

@@ -1,6 +1,9 @@
 .news-container {
   margin-top: 4rem;
   margin-bottom: 6rem;
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
 
 .news-img-container {
@@ -25,6 +28,10 @@
 
 .news-content {
   color: rgba(2, 61, 138, 0.7);
+}
+
+.news-row {
+  width: 100%;
 }
 
 .publish-date {

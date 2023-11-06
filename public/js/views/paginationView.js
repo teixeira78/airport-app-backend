@@ -1,5 +1,7 @@
 import View from './Views';
 
+// FIXME: Pagination button not working properly on mobile;
+
 class PaginationView extends View {
   // DOM elements for pagination
   _parentElement = document.querySelector('.news-side-nav--preview');

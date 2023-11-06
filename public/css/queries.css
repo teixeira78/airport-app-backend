@@ -16,9 +16,22 @@
     font-size: 14px;
   }
 
-  /* .news-row {
-    flex-direction: column;
-  } */
+  .guide-title {
+    font-size: 2.5rem !important;
+  }
+
+  .guide-intro-text {
+    font-size: 1rem !important;
+  }
+
+  .nav-tab {
+    border-bottom: 0 !important;
+    margin-bottom: 0;
+  }
+
+  .scrollbox {
+    margin-bottom: 2rem !important;
+  }
 }
 
 @media (max-width: 991px) {
@@ -106,6 +119,26 @@
 
   .news-row {
     --mdb-gutter-y: 5rem;
+  }
+
+  /* GUIDE */
+
+  .section-guide {
+    margin-top: 5rem !important;
+    padding: 0 !important;
+  }
+
+  .guide-text-box {
+    padding-top: 0 !important;
+  }
+
+  .guide-summary {
+    font-size: 0.9rem;
+    width: 100% !important;
+  }
+
+  .swiper-slide.card:hover {
+    transform: translateY(0rem) !important;
   }
 }
 
@@ -224,6 +257,20 @@
   .flight-table--body .flight-airline-name--cell {
     display: none;
   }
+
+  .guide-summary {
+    width: 100% !important;
+  }
+
+  .guides-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+
+  .guides-container .row {
+    width: 100%;
+  }
 }
 
 @media (max-width: 616px) {
@@ -314,5 +361,33 @@
   .flight-table--head tr th {
     white-space: nowrap;
     font-size: 0.8rem;
+  }
+
+  /* GUIDE PAGE */
+
+  .section-guide {
+    padding: 0 2rem !important;
+  }
+
+  .health-img-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+
+  .health-img-container img {
+    width: 75% !important;
+  }
+
+  .guide-title {
+    font-size: 2.3rem !important;
+  }
+
+  .guide-summary {
+    font-size: 0.8rem;
+  }
+
+  .nav-tab--link a {
+    font-size: 1rem !important;
   }
 }

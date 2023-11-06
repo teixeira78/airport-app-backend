@@ -47,20 +47,20 @@
 
 .info-box-title {
   font-weight: 600;
-  font-size: 1.25rem;
+  font-size: 1.2rem;
 }
 
 .info-box-description {
   font-weight: 300;
-  font-size: 0.75rem;
+  font-size: 0.8rem;
 }
 
-.info-box-link {
+.info-box-read {
   align-self: flex-end;
 }
 
 .arrow-icon,
-.info-box-link a {
+.info-box-read p {
   transition: all 0.3s ease;
 }
 
@@ -68,15 +68,11 @@
   cursor: pointer;
 }
 
-.info-box-link a {
+.info-box-read p {
   color: #023e8a;
   font-size: 0.75rem;
   font-weight: 500;
-  border-bottom: 1px solid transparent;
-}
-
-.info-box-link a:hover {
-  color: #339af0;
+  margin-bottom: 0;
 }
 
 .info-box:hover .arrow-icon {

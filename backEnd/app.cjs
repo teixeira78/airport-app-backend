@@ -8,6 +8,7 @@ const newsRouter = require('./routes/newsRoutes.cjs');
 const hotelRouter = require('./routes/hotelRoutes.cjs');
 const viewRouter = require('./routes/viewRoutes.cjs');
 const metadataRouter = require('./routes/metadataRoutes.cjs');
+const guideRouter = require('./routes/guideRoutes.cjs');
 
 const app = express();
 
@@ -35,6 +36,7 @@ app.use('/', viewRouter);
 app.use('/api/v1/news', newsRouter);
 app.use('/api/v1/hotels', hotelRouter);
 app.use('/api/v1/metadata', metadataRouter);
+app.use('/api/v1/guides', guideRouter);
 
 // If previous routes are not executed:
 app.all('*', (req, res, next) => {

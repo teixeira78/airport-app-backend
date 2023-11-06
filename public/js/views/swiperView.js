@@ -20,9 +20,11 @@ class SwiperView {
   handleSwiper(swiper) {
     this.swiperContainer = new Swiper(swiper, {
       direction: 'horizontal',
-      centeredSlides: false,
+      centeredSlides: true,
       initialSlide: 0,
       grabCursor: true,
+      spaceBetween: 30,
+      slidesPerView: 'auto',
       scrollbar: {
         el: this.swiperScrollbar,
         draggable: true,
@@ -30,6 +32,7 @@ class SwiperView {
       },
       breakpoints: {
         575: {
+          spaceBetween: 30,
           slidesPerView: 2,
         },
         768: {
@@ -40,6 +43,7 @@ class SwiperView {
           spaceBetween: 30,
           slidesPerView: 'auto',
           slidesPerGroup: 1,
+          centeredSlides: false,
         },
       },
     });
