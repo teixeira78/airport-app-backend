@@ -11,7 +11,7 @@
   display: inline-block;
   border: 1px solid #eee;
   padding: 1.5rem 1.5rem;
-  height: 11rem;
+  height: 10rem;
   gap: 1rem;
   transition: all 0.5s ease;
 }
@@ -46,7 +46,7 @@
 }
 
 .info-box-title {
-  font-weight: 600;
+  font-weight: 500;
   font-size: 1.2rem;
 }
 
@@ -76,7 +76,6 @@
 }
 
 .info-box:hover .arrow-icon {
-  color: #339af0;
   transform: translateX(0.5rem);
 }
 

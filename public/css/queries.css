@@ -140,6 +140,24 @@
   .swiper-slide.card:hover {
     transform: translateY(0rem) !important;
   }
+
+  .overview-section {
+    gap: 3rem;
+  }
+
+  .overview-boxes {
+    justify-content: center !important;
+  }
+
+  .overview-section--text {
+    align-items: center !important;
+    margin: 0;
+  }
+
+  .overview-section-intro {
+    text-align: center !important;
+    width: 100%;
+  }
 }
 
 @media (max-width: 840px) {
@@ -270,6 +288,10 @@
 
   .guides-container .row {
     width: 100%;
+  }
+
+  .overview-intro {
+    display: none;
   }
 }
 

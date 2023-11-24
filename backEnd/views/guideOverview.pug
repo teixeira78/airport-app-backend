@@ -1,0 +1,29 @@
+
+extends base
+
+block append head 
+  link(rel='stylesheet', href='/css/guide.css')
+
+
+mixin mini-card()
+  .mini-card.d-flex
+    h6.text-center.mini-card--title Immigration and Visa
+
+block content
+  section.guide-overview
+    .container-fluid.section-hero
+      .guide-overview-intro.container.d-flex.align-items-center
+        .guide-text-box
+          h2.header-title-primary At the Airport
+          p.header-subtitle
+            | Your go-to resource for everything you need to know about navigating
+            | airports with ease and confidence
+    .container-fluid.overview-container
+      .container
+        .row.overview-section.row-flex.gx-5
+          .overview-section--text.offset-1.col-lg-4.col-xs-11.d-flex.flex-column.align-items-start.justify-content-center
+            h3.heading-tertiary.overview-header Passanger Guide
+            p.txt-w--75.overview-intro
+              | The Ultimate Passenger Guide to Enhance Your Travel Experience
+          .overview-boxes.col-lg-7.justify-content-start.col-xs-12
+            +mini-card()

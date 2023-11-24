@@ -2,6 +2,14 @@ const mongoose = require('mongoose');
 const helper = require('../utils/helper.cjs');
 
 const guideSchema = new mongoose.Schema({
+  type: {
+    type: String,
+    required: [true, 'Guide must have a type'],
+    enum: {
+      values: ['passanger', 'airport', 'services'],
+      message: 'Guides type is either: passanger, airport or services',
+    },
+  },
   category: {
     type: String,
     required: [true, 'A Guide must have a category'],
@@ -27,7 +35,6 @@ const guideSchema = new mongoose.Schema({
   },
   icon: {
     type: String,
-    required: [true, 'A Guide must have an icon'],
   },
   accordionItems: [
     {

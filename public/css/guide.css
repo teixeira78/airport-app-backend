@@ -4,14 +4,10 @@
   overflow: hidden;
 }
 
-.nav-tab {
-  border-bottom: 1px solid #e9ecef;
-}
-
 .nav-tab--link a {
   display: block;
   transition: all 0.3s ease;
-  height: 3rem;
+  padding: 1rem 0;
 }
 
 .nav-tab--link a:link,
@@ -49,17 +45,30 @@
 }
 
 .guide-intro {
-  margin-bottom: 6rem;
+  /* margin-bottom: 6rem; */
+  /* justify-content: space-between; */
+  /* align-items: start; */
+  justify-content: center;
+  align-items: center;
+}
+
+.guide-overview-intro {
   justify-content: space-between;
   align-items: start;
+}
+
+.guide-intro .row {
 }
 
 .nav-tab {
   list-style: none;
   display: flex;
-  gap: 2rem;
+  gap: 2.5rem;
   align-items: center;
   padding: 0;
+  margin-bottom: 2rem;
+  margin-top: 4rem;
+  border-bottom: 1px solid #e9ecef;
 }
 
 .scrollbox {
@@ -93,8 +102,8 @@
 }
 
 .guide-text-box {
-  padding-top: 7rem;
-  margin-bottom: 2rem;
+  /* padding-top: 7rem;
+  margin-bottom: 2rem; */
 }
 
 .guide-summary {

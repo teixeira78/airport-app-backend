@@ -1,5 +1,6 @@
 [
   {
+    "type": "passanger",
     "category": "health",
     "title": "Health Guide",
     "subtitle": "Discover Essential Health and Safety Tips for a Worry-Free Journey.",
@@ -42,7 +43,8 @@
     ]
   },
   {
-    "category": "Immigration",
+    "type": "passanger",
+    "category": "immigration",
     "title": "Immigration and Visa",
     "subtitle": "Your safety during your journey is of utmost importance to us",
     "description": "This guide provides you with essential information and tips to ensure a safe and comfortable experience as you navigate through the immigration and visa procedures at our airport.",
@@ -84,7 +86,8 @@
     ]
   },
   {
-    "category": "check-in",
+    "type": "passanger",
+    "category": "check_in",
     "title": "Check-In Guide",
     "subtitle": "Your Safety and Peace of Mind: Comprehensive Check-In Procedures",
     "description": "We want to make your check-in process as smooth as possible. This guide provides you with essential information on how to check in for your flight.",
@@ -122,6 +125,7 @@
     ]
   },
   {
+    "type": "passanger",
     "category": "security",
     "title": "Security Screening",
     "subtitle": "A Safe and Efficient Security Process: Your safety is our priority",
@@ -164,6 +168,7 @@
     ]
   },
   {
+    "type": "passanger",
     "category": "baggage",
     "title": "Baggage Claim",
     "subtitle": "Welcome to the baggage claim area: Collecting Your Belongings with Ease",
@@ -206,6 +211,7 @@
     ]
   },
   {
+    "type": "passanger",
     "category": "transport",
     "title": "Transport and Parking",
     "subtitle": "Travel Logistics: We're here to make your journey as convenient as possible.",
@@ -244,6 +250,140 @@
       {
         "title": "Parking Assistance",
         "content": "If you encounter issues with parking or need assistance with your vehicle, our airport staff is available to help. Please don't hesitate to ask for support if needed."
+      }
+    ]
+  },
+  {
+    "type": "services",
+    "category": "internet",
+    "title": "Wifi & Internet",
+    "subtitle": "Stay connected on the go.",
+    "description": " Learn about the availability of WiFi services and internet facilities at the airport for a seamless travel experience.",
+    "coverImg": "image.png",
+    "accordionItems": [
+      {
+        "title": "Using your phone to connect",
+        "content": "Follow these steps to connect your smartphone to the airport WiFi network for seamless internet access."
+      },
+      {
+        "title": "connect using your laptop",
+        "content": "Connect your laptop to the airport's WiFi network by following these easy-to-follow instructions for a reliable online experience."
+      },
+      {
+        "title": "Quick Connection via Message",
+        "content": "Receive step-by-step instructions through a text message on your phone to easily set up and connect to the airport's WiFi."
+      },
+      {
+        "title": "Adding more internet credit",
+        "content": "Stay connected without interruptions by learning how to add more internet credit to your account while using the airport WiFi."
+      }
+    ]
+  },
+  {
+    "type": "services",
+    "category": "lost_found",
+    "title": "Lost & found",
+    "subtitle": "Recover your belongings",
+    "description": "Explore the lost and found services at the airport to reclaim your lost items and ensure a stress-free journey.",
+    "coverImg": "image.png",
+    "accordionItems": [
+      {
+        "title": "Left something behind in the aircraft, or the baggage has not arried or is delayed ?",
+        "content": "If something was left behind in the aircraft or your baggaged has not arrived or is damaged, please contact the airline directly for further information on how to to proceed"
+      },
+      {
+        "title": "Lost Something at Guinea Bissau Airport ?",
+        "content": "Please go directly to the Lost & Found office or please contact 0123456789"
+      }
+    ]
+  },
+  {
+    "type": "services",
+    "category": "medical",
+    "title": "Medical Assistance",
+    "subtitle": "Your health matters",
+    "description": "Discover the available medical services and assistance at the airport to ensure the well-being of travelers.",
+    "coverImg": "medical_image.png",
+    "accordionItems": [
+      {
+        "title": "First Aid Stations",
+        "content": "Locate the first aid stations at the airport for immediate medical assistance."
+      },
+      {
+        "title": "Emergency Contact",
+        "content": "In case of emergencies, contact airport staff or call the emergency number provided."
+      }
+    ]
+  },
+  {
+    "type": "services",
+    "category": "car_hire",
+    "title": "Car Hire Services",
+    "subtitle": "Explore at your own pace",
+    "description": "Find information about car rental services at the airport, offering a convenient way to explore your destination.",
+    "coverImg": "car_hire_image.png",
+    "accordionItems": [
+      {
+        "title": "Rental Options",
+        "content": "Discover a variety of rental options to suit your travel needs."
+      },
+      {
+        "title": "Booking Process",
+        "content": "Learn about the easy booking process for car hire services at the airport."
+      }
+    ]
+  },
+  {
+    "type": "airport",
+    "category": "bars_cafes",
+    "title": "Bars & Cafes",
+    "subtitle": "Sip and savor",
+    "description": "Unwind at the airport's bars and cafes, offering a relaxing atmosphere and a selection of beverages and snacks.",
+    "coverImg": "bars_cafes_image.png",
+    "accordionItems": [
+      {
+        "title": "Bar Lounges",
+        "content": "Relax at the airport's bar lounges, offering a variety of beverages in a comfortable setting."
+      },
+      {
+        "title": "Cafeterias",
+        "content": "Grab a quick bite or enjoy a leisurely meal at the airport's cafeterias."
+      }
+    ]
+  },
+  {
+    "type": "airport",
+    "category": "shopping",
+    "title": "Airport Shopping",
+    "subtitle": "Retail therapy on the fly",
+    "description": "Discover a range of shops and boutiques at the airport, offering everything from luxury goods to travel essentials.",
+    "coverImg": "shopping_image.png",
+    "accordionItems": [
+      {
+        "title": "Duty-Free",
+        "content": "Explore duty-free stores offering a variety of products."
+      },
+      {
+        "title": "Fashion & Accessories",
+        "content": "Discover the latest fashion and accessories at the airport's retail outlets."
+      }
+    ]
+  },
+  {
+    "type": "airport",
+    "category": "eat_drink",
+    "title": "Dining Options",
+    "subtitle": "Culinary delights before takeoff",
+    "description": "Explore diverse dining options available at the airport, from quick bites to fine dining experiences.",
+    "coverImg": "eat_drink_image.png",
+    "accordionItems": [
+      {
+        "title": "Restaurants",
+        "content": "Get a taste of the variety of restaurants present at the airport."
+      },
+      {
+        "title": "Coffee Shops",
+        "content": "Enjoy a cup of coffee or tea at the airport's cozy coffee shops."
       }
     ]
   }

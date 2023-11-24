@@ -2,23 +2,41 @@ const News = require('../models/newsModel.cjs');
 const Guide = require('../models/guideModel.cjs');
 const APIFeatures = require('../utils/apiFeature.cjs');
 const catchAsync = require('../utils/catchAsync.cjs');
+const helper = require('../utils/helper.cjs');
+
+// TODO: Understand the AppError and Error handling on prod and dev mode. Watch the udemy video again;
+
+// FIXME: Render the overview page with the intended data and set title for each data type: e.g: Passanger Guide, etc ...
+
+// BUG: @Get guide, all the guides are being displayed. Need to filter the guides according to the category
 
 exports.getHome = catchAsync(async (req, res) => {
   // 1) Get data from collection
-  const newsData = await News.find();
-  const guidesData = await Guide.find();
+  const guidesData = await Guide.find({
+    category: {
+      $in: [
+        'health',
+        'immigration',
+        'check_in',
+        'security',
+        'baggage',
+        'transport',
+      ],
+    },
+  });
 
-  const latestNews = newsData.filter((news) => news.type === 'national');
-  const airportNews = newsData.filter((news) => news.type === 'airport');
-  const guides = guidesData.map((el) => ({
-    slug: el.slug,
-    title: el.title,
-    subtitle: el.subtitle,
-    icon: el.icon,
+  const latestNews = await helper.getDataByType(News, 'national');
+  const airportNews = await helper.getDataByType(News, 'airport');
+
+  // 2) Specify the fields needed
+  const guides = guidesData.map((guide) => ({
+    slug: guide.slug,
+    title: guide.title,
+    subtitle: guide.subtitle,
+    icon: guide.icon,
   }));
 
-  // 2) Build template
-  // 3) Render the template using news data from 1)
+  // 3) Render the template using news data from 2)
   res.status(200).render('home', {
     title: 'Welcome',
     latestNews,
@@ -72,5 +90,18 @@ exports.getGuide = catchAsync(async (req, res) => {
     title: currentGuide.title,
     currentGuide,
     guides,
+  });
+});
+
+exports.getOverview = catchAsync(async (req, res) => {
+  const passangerGuide = await helper.getGuideData('passanger');
+  const serviceGuide = await helper.getGuideData('services');
+  const airportGuide = await helper.getGuideData('airport');
+
+  res.status(200).render('guideOverview', {
+    title: 'Guide Overview',
+    passangerGuide,
+    serviceGuide,
+    airportGuide,
   });
 });
