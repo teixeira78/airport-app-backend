@@ -32,13 +32,13 @@
 }
 
 .guide-title {
-  font-size: 3rem;
+  font-size: 2.5rem;
   font-weight: 600;
   margin-bottom: 1.2rem;
 }
 
 .guide-intro-text {
-  font-size: 1.3rem;
+  font-size: 1.2rem;
   color: rgb(99, 111, 153);
   padding-left: 1rem;
   width: 75%;
@@ -55,9 +55,6 @@
 .guide-overview-intro {
   justify-content: space-between;
   align-items: start;
-}
-
-.guide-intro .row {
 }
 
 .nav-tab {
@@ -122,4 +119,9 @@
 .guide-img-container img {
   object-fit: cover;
   max-width: 100%;
+}
+
+.overview-section:not(:last-child) {
+  border-bottom: 1px solid #eee;
+  padding-bottom: 5rem;
 }

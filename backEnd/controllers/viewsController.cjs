@@ -6,9 +6,9 @@ const helper = require('../utils/helper.cjs');
 
 // TODO: Understand the AppError and Error handling on prod and dev mode. Watch the udemy video again;
 
-// FIXME: Render the overview page with the intended data and set title for each data type: e.g: Passanger Guide, etc ...
+// [x]: Render the overview page with the intended data and set title for each data type: e.g: Passanger Guide, etc ...
 
-// BUG: @Get guide, all the guides are being displayed. Need to filter the guides according to the category
+// [x]: @Get guide, all the guides are being displayed. Need to filter the guides according to the category
 
 exports.getHome = catchAsync(async (req, res) => {
   // 1) Get data from collection
@@ -80,7 +80,8 @@ exports.getNews = catchAsync(async (req, res) => {
 exports.getGuide = catchAsync(async (req, res) => {
   const currentGuide = await Guide.findOne({ slug: req.params.slug });
 
-  const guideData = await Guide.find();
+  const { type } = currentGuide;
+  const guideData = await Guide.find({ type });
   const guides = guideData.map((el) => ({
     slug: el.slug,
     title: el.title,
@@ -94,14 +95,30 @@ exports.getGuide = catchAsync(async (req, res) => {
 });
 
 exports.getOverview = catchAsync(async (req, res) => {
-  const passangerGuide = await helper.getGuideData('passanger');
-  const serviceGuide = await helper.getGuideData('services');
-  const airportGuide = await helper.getGuideData('airport');
+  const passangerGuideData = await helper.getOverviewData(Guide, 'passanger');
+  const serviceGuideData = await helper.getOverviewData(Guide, 'services');
+  const airportGuideData = await helper.getOverviewData(Guide, 'airport');
+
+  const guides = [
+    {
+      title: 'passanger guide',
+      subtitle: 'The Ultimate Passenger Guide',
+      data: passangerGuideData,
+    },
+    {
+      title: 'service guide',
+      subtitle: 'Your Comprehensive Guide to Services',
+      data: serviceGuideData,
+    },
+    {
+      title: 'airport guide',
+      subtitle: 'Explore Our In-Depth Airport Guide',
+      data: airportGuideData,
+    },
+  ];
 
   res.status(200).render('guideOverview', {
     title: 'Guide Overview',
-    passangerGuide,
-    serviceGuide,
-    airportGuide,
+    guides,
   });
 });

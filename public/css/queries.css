@@ -150,8 +150,12 @@
   }
 
   .overview-section--text {
-    align-items: center !important;
+    text-align: center;
     margin: 0;
+  }
+
+  .overview-intro {
+    display: none;
   }
 
   .overview-section-intro {

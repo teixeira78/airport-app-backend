@@ -4,10 +4,14 @@ extends base
 block append head 
   link(rel='stylesheet', href='/css/guide.css')
 
+mixin title-box(guide)
+  h3.heading-tertiary.overview-header= guide.title
+  p.txt-w--75.overview-intro= guide.subtitle
 
-mixin mini-card()
-  .mini-card.d-flex
-    h6.text-center.mini-card--title Immigration and Visa
+mixin mini-card(data)
+  a(href=`guides/${data.slug}`) 
+    .mini-card.d-flex
+      h6.text-center.mini-card--title= data.title
 
 block content
   section.guide-overview
@@ -18,12 +22,11 @@ block content
           p.header-subtitle
             | Your go-to resource for everything you need to know about navigating
             | airports with ease and confidence
-    .container-fluid.overview-container
-      .container
-        .row.overview-section.row-flex.gx-5
-          .overview-section--text.offset-1.col-lg-4.col-xs-11.d-flex.flex-column.align-items-start.justify-content-center
-            h3.heading-tertiary.overview-header Passanger Guide
-            p.txt-w--75.overview-intro
-              | The Ultimate Passenger Guide to Enhance Your Travel Experience
+    .container.overview-container.d-flex.flex-column
+      each guide in guides
+        .row.overview-section.row-flex
+          .overview-section--text.offset-1.col-lg-4.col-xs-11d-flex.flex-column.align-items-startjustify-content-center  
+            +title-box(guide)
           .overview-boxes.col-lg-7.justify-content-start.col-xs-12
-            +mini-card()
+            each data in guide.data
+              +mini-card(data)

@@ -45,7 +45,7 @@
   {
     "type": "passanger",
     "category": "immigration",
-    "title": "Immigration and Visa",
+    "title": "Immigration & Visa",
     "subtitle": "Your safety during your journey is of utmost importance to us",
     "description": "This guide provides you with essential information and tips to ensure a safe and comfortable experience as you navigate through the immigration and visa procedures at our airport.",
     "coverImg": "immigration.png",
@@ -213,7 +213,7 @@
   {
     "type": "passanger",
     "category": "transport",
-    "title": "Transport and Parking",
+    "title": "Transport & Parking",
     "subtitle": "Travel Logistics: We're here to make your journey as convenient as possible.",
     "description": "Welcome to our airport's transportation and parking guide. This guide provides essential information on transportation options and parking facilities for a seamless experience.",
     "coverImg": "transport.png",

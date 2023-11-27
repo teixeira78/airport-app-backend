@@ -458,7 +458,8 @@ a:visited {
 .mini-card--title {
   line-height: 25px;
   margin-bottom: 0;
-  margin-top: 2rem;
+  font-size: 16px;
+  text-transform: capitalize;
 }
 
 .mini-card:hover {
