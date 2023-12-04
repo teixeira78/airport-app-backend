@@ -1,0 +1,390 @@
+[
+  {
+    "type": "passanger",
+    "category": "health",
+    "title": "Health Guide",
+    "subtitle": "Discover Essential Health and Safety Tips for a Worry-Free Journey.",
+    "description": "Your health and safety are our top priorities. This guide will provide you with essential information and tips to ensure a safe and comfortable journey through our airport.",
+    "coverImg": "health.png",
+    "icon": "health-icon.svg",
+    "accordionItems": [
+      {
+        "title": "Arrival Procedures",
+        "content": "When you arrive at our airport, follow the signs to the designated health screening area. Our staff will guide you through the necessary health and safety procedures to ensure a smooth and secure entry. This includes temperature checks, health questionnaires, and compliance with any entry requirements set by local authorities. We understand the importance of a stress-free arrival experience and are here to assist you at every step of the way."
+      },
+      {
+        "title": "Baggage Handling",
+        "content": "Learn about our baggage handling procedures and how we prioritize your health and safety while handling your luggage. We use industry-standard protocols to minimize contact and ensure your belongings are secure. Our baggage handlers wear personal protective equipment, and our luggage processing areas undergo regular disinfection. Rest assured that your baggage is in safe hands throughout your journey."
+      },
+      {
+        "title": "Social Distancing Measures",
+        "content": "Discover our social distancing policies, including information on maintaining safe distances from others, seating arrangements, and guidelines for queues to help you maintain a safe environment. We have placed floor markings and signage throughout the airport to remind everyone to keep a safe distance. Our seating areas have been adjusted to ensure adequate spacing, and we have implemented one-way systems in congested areas to reduce close contact."
+      },
+      {
+        "title": "Sanitization Protocols",
+        "content": "We are committed to cleanliness. Learn about our rigorous sanitization procedures, including the regular disinfection of high-touch surfaces and hand sanitizer stations throughout the airport. Our cleaning teams work around the clock to keep the airport environment as clean as possible. Hand sanitizer stations are conveniently located in various areas, making it easy for you to practice good hand hygiene during your journey."
+      },
+      {
+        "title": "Face Coverings",
+        "content": "Wearing a mask is crucial for your safety and the safety of others. Find out our face covering requirements and where you can access masks if needed. Face coverings, such as masks or face shields, are mandatory for all passengers and airport staff. If you forget your mask, don't worry; we provide complimentary masks at key locations within the airport to ensure that everyone can comply with this important safety measure."
+      },
+      {
+        "title": "Traveling with Children",
+        "content": "If you're traveling with children, we have guidelines to make your journey comfortable and safe for your little ones. Learn about kid-friendly facilities and services. We understand that traveling with children can be challenging, so we've designed dedicated play areas and child-friendly services to make your journey as pleasant as possible. Explore our family-friendly amenities to keep your children entertained and happy."
+      },
+      {
+        "title": "Airport Amenities",
+        "content": "Explore the various amenities at our airport, from dining options to relaxation areas. We've adjusted our services to prioritize your well-being. Whether you're looking for a quick meal or a place to relax between flights, our airport offers a range of dining options and comfortable seating areas. Check out our updated services to enhance your airport experience."
+      },
+      {
+        "title": "Travel Advisories",
+        "content": "Stay informed about any travel advisories and health updates that may affect your journey. We provide real-time information to ensure you have the latest guidance. Travel conditions can change, and we are dedicated to keeping you informed. Check our travel advisories and stay up-to-date with the latest health updates to plan your journey with confidence."
+      }
+    ]
+  },
+  {
+    "type": "passanger",
+    "category": "immigration",
+    "title": "Immigration & Visa",
+    "subtitle": "Your safety during your journey is of utmost importance to us",
+    "description": "This guide provides you with essential information and tips to ensure a safe and comfortable experience as you navigate through the immigration and visa procedures at our airport.",
+    "coverImg": "immigration.png",
+    "icon": "passport-icon.svg",
+    "accordionItems": [
+      {
+        "title": "Visa Application Process",
+        "content": "The visa application process involves submitting the necessary documents, completing the application forms, and paying the required fees. Our immigration officers will review your application, and you will be notified of the status. Once approved, you will receive your visa."
+      },
+      {
+        "title": "Immigration Procedures",
+        "content": "Upon arrival, you will go through immigration procedures, which include presenting your visa, passport, and other required documents. Our officers will verify your information and may ask questions about your visit. Once cleared, you can proceed to your destination."
+      },
+      {
+        "title": "Health Screenings",
+        "content": "To ensure safety, health screenings such as temperature checks and health questionnaires are conducted. If any health concerns are identified, our medical team will provide assistance and guidance on the necessary steps to protect your health and the health of others."
+      },
+      {
+        "title": "Quarantine Guidelines",
+        "content": "If quarantine is required, you will be directed to a designated facility where you'll stay for a specified period. During quarantine, you will receive regular health check-ups and support. This precaution is in place to prevent the spread of contagious diseases."
+      },
+      {
+        "title": "Travel Insurance",
+        "content": "Having travel insurance is advisable. It can provide coverage for medical emergencies, trip cancellations, and other unexpected situations. Make sure to understand the coverage details and contact your insurance provider in case of any issues."
+      },
+      {
+        "title": "Health and Safety Tips",
+        "content": "For a safe journey, maintain physical distance, wear face coverings, and practice good hygiene. Follow our airport guidelines, as they are designed to protect your health and the health of others during your visit."
+      },
+      {
+        "title": "Language Assistance",
+        "content": "If you need language assistance during the immigration and visa process, our staff is available to provide translation and help you communicate effectively throughout the procedures."
+      },
+      {
+        "title": "Emergency Contacts",
+        "content": "In case of any emergency or if you need assistance, here are important contact numbers and information to ensure your well-being throughout your journey. Do not hesitate to reach out for support when needed."
+      }
+    ]
+  },
+  {
+    "type": "passanger",
+    "category": "check_in",
+    "title": "Check-In Guide",
+    "subtitle": "Your Safety and Peace of Mind: Comprehensive Check-In Procedures",
+    "description": "We want to make your check-in process as smooth as possible. This guide provides you with essential information on how to check in for your flight.",
+    "coverImg": "checkin.png",
+    "icon": "checkin-icon.svg",
+    "accordionItems": [
+      {
+        "title": "Check-In Options",
+        "content": "You can check in online through our website or mobile app before arriving at the airport. Online check-in allows you to select your seats, add baggage, and receive your boarding pass, saving you time at the airport."
+      },
+      {
+        "title": "Baggage Check",
+        "content": "If you have checked baggage, proceed to the baggage drop area at the airport. Our staff will assist you with tagging and checking in your luggage. Make sure your baggage complies with weight and size restrictions."
+      },
+      {
+        "title": "Boarding Pass",
+        "content": "Your boarding pass is essential for your journey. Keep it accessible on your mobile device or as a printed copy. It includes important flight information and gate details."
+      },
+      {
+        "title": "Document Verification",
+        "content": "Ensure you have all necessary travel documents, such as your passport and visa. Our staff may verify your documents during the check-in process, so have them ready for inspection."
+      },
+      {
+        "title": "Special Assistance",
+        "content": "If you require special assistance, such as wheelchair services or support for unaccompanied minors, please inform our staff during check-in. We are here to accommodate your needs."
+      },
+      {
+        "title": "Timely Arrival",
+        "content": "Arrive at the airport well in advance of your flight's departure time. Airlines typically recommend arriving 2-3 hours before domestic flights and 3-4 hours before international flights to allow for check-in, security, and boarding procedures."
+      },
+      {
+        "title": "Contact Information",
+        "content": "In case you encounter any issues during the check-in process or need assistance, here are important contact numbers and information to ensure your journey gets back on track."
+      }
+    ]
+  },
+  {
+    "type": "passanger",
+    "category": "security",
+    "title": "Security Screening",
+    "subtitle": "A Safe and Efficient Security Process: Your safety is our priority",
+    "description": "This guide provides you with essential information on how to navigate the security screening process smoothly and ensure a secure and efficient experience at our airport.",
+    "coverImg": "security.png",
+    "icon": "security-icon.svg",
+    "accordionItems": [
+      {
+        "title": "Preparation",
+        "content": "Prepare for security screening by emptying your pockets, removing metal items, and placing liquids and gels in a clear plastic bag. Ensure that your carry-on luggage does not contain prohibited items."
+      },
+      {
+        "title": "Document Check",
+        "content": "Present your boarding pass and identification to security personnel. Ensure your travel documents are valid and match the information on your boarding pass."
+      },
+      {
+        "title": "X-ray Screening",
+        "content": "Place your carry-on items, including laptops and other electronics, in a plastic bin for X-ray screening. Follow instructions to remove your shoes and belt, if required, and proceed through the metal detector."
+      },
+      {
+        "title": "Body Scanners",
+        "content": "Some airports may have body scanners for additional security. Follow instructions from security staff when using these scanners. They are safe and help detect concealed items."
+      },
+      {
+        "title": "Prohibited Items",
+        "content": "Familiarize yourself with the list of prohibited items to avoid issues during security screening. Common prohibited items include sharp objects, liquids over 3.4 ounces, and certain tools."
+      },
+      {
+        "title": "Secondary Screening",
+        "content": "In rare cases, passengers may undergo secondary screening. Remain calm and cooperate with security personnel during this process. It is for everyone's safety."
+      },
+      {
+        "title": "Emergency Contact",
+        "content": "In case of any concerns or emergencies during the security screening process, here are important contact numbers and information to ensure your well-being and a quick resolution."
+      },
+      {
+        "title": "Security Procedures",
+        "content": "Security personnel are trained to ensure your safety. They follow strict procedures, and their goal is to make your journey as secure and efficient as possible. Please comply with their instructions."
+      }
+    ]
+  },
+  {
+    "type": "passanger",
+    "category": "baggage",
+    "title": "Baggage Claim",
+    "subtitle": "Welcome to the baggage claim area: Collecting Your Belongings with Ease",
+    "description": "This guide provides essential information to help you collect your luggage smoothly and efficiently, ensuring a stress-free end to your journey at our airport.",
+    "coverImg": "baggage-claim.png",
+    "icon": "baggage-claim-icon.svg",
+    "accordionItems": [
+      {
+        "title": "Arrival at Baggage Claim",
+        "content": "Upon arrival at the baggage claim area, locate the designated carousel for your flight. Check the display screens for your flight number and carousel assignment."
+      },
+      {
+        "title": "Baggage Carousel Rules",
+        "content": "Stand a comfortable distance away from the carousel, allowing space for others to collect their luggage. Keep an eye on the baggage carousel for your belongings."
+      },
+      {
+        "title": "Luggage Identification",
+        "content": "Verify that the luggage you collect belongs to you. Use luggage tags or other identifying marks to avoid taking someone else's luggage by mistake."
+      },
+      {
+        "title": "Delayed or Missing Luggage",
+        "content": "If your luggage is delayed or missing, proceed to the airline's baggage claim counter to report the issue. They will assist you in locating or recovering your luggage."
+      },
+      {
+        "title": "Fragile Items",
+        "content": "If you are carrying fragile or valuable items, consider notifying airline staff and marking your luggage accordingly. Handle fragile items with care."
+      },
+      {
+        "title": "Lost Luggage Assistance",
+        "content": "In the event of lost luggage, contact the airline's lost and found department or the airport's lost luggage office for assistance in locating and returning your belongings."
+      },
+      {
+        "title": "Baggage Assistance",
+        "content": "If you need assistance with your luggage, our airport staff and porters are available to help. Don't hesitate to ask for support if you require it."
+      },
+      {
+        "title": "Emergency Contacts",
+        "content": "In case of any concerns or emergencies in the baggage claim area, here are important contact numbers and information to ensure your well-being and the swift resolution of any issues."
+      }
+    ]
+  },
+  {
+    "type": "passanger",
+    "category": "transport",
+    "title": "Transport & Parking",
+    "subtitle": "Travel Logistics: We're here to make your journey as convenient as possible.",
+    "description": "Welcome to our airport's transportation and parking guide. This guide provides essential information on transportation options and parking facilities for a seamless experience.",
+    "coverImg": "transport.png",
+    "icon": "parking-taxi-icon.svg",
+    "accordionItems": [
+      {
+        "title": "Transportation Options",
+        "content": "Explore the various transportation options available, including taxis, rideshares, shuttle services, and public transportation. Learn about pickup and drop-off points for each mode of transportation."
+      },
+      {
+        "title": "Parking Facilities",
+        "content": "Discover our parking facilities, including short-term and long-term parking options. Find out about rates, payment methods, and the location of parking areas near the airport terminals."
+      },
+      {
+        "title": "Accessible Parking",
+        "content": "If you require accessible parking, we offer designated spaces with easy access to terminal entrances. Ensure you have the necessary documentation or permits to use these spaces."
+      },
+      {
+        "title": "Valet Parking",
+        "content": "Consider our valet parking service for added convenience. Drop off your vehicle at the valet station, and our staff will park it securely. When you return, your car will be waiting for you."
+      },
+      {
+        "title": "Airport Shuttles",
+        "content": "If you need transportation between terminals or parking areas, airport shuttles are available. Shuttles run at regular intervals and are a convenient way to move around the airport."
+      },
+      {
+        "title": "Electric Vehicle Charging",
+        "content": "We provide electric vehicle charging stations for environmentally conscious travelers. Locate charging stations and find information on usage and fees."
+      },
+      {
+        "title": "Transportation Contacts",
+        "content": "In case you need assistance or have questions about transportation services, here are important contact numbers and information to ensure your travel logistics go smoothly."
+      },
+      {
+        "title": "Parking Assistance",
+        "content": "If you encounter issues with parking or need assistance with your vehicle, our airport staff is available to help. Please don't hesitate to ask for support if needed."
+      }
+    ]
+  },
+  {
+    "type": "services",
+    "category": "internet",
+    "title": "Wifi & Internet",
+    "subtitle": "Stay connected on the go.",
+    "description": " Learn about the availability of WiFi services and internet facilities at the airport for a seamless travel experience.",
+    "coverImg": "image.png",
+    "accordionItems": [
+      {
+        "title": "Using your phone to connect",
+        "content": "Follow these steps to connect your smartphone to the airport WiFi network for seamless internet access."
+      },
+      {
+        "title": "connect using your laptop",
+        "content": "Connect your laptop to the airport's WiFi network by following these easy-to-follow instructions for a reliable online experience."
+      },
+      {
+        "title": "Quick Connection via Message",
+        "content": "Receive step-by-step instructions through a text message on your phone to easily set up and connect to the airport's WiFi."
+      },
+      {
+        "title": "Adding more internet credit",
+        "content": "Stay connected without interruptions by learning how to add more internet credit to your account while using the airport WiFi."
+      }
+    ]
+  },
+  {
+    "type": "services",
+    "category": "lost_found",
+    "title": "Lost & found",
+    "subtitle": "Recover your belongings",
+    "description": "Explore the lost and found services at the airport to reclaim your lost items and ensure a stress-free journey.",
+    "coverImg": "image.png",
+    "accordionItems": [
+      {
+        "title": "Left something behind in the aircraft, or the baggage has not arried or is delayed ?",
+        "content": "If something was left behind in the aircraft or your baggaged has not arrived or is damaged, please contact the airline directly for further information on how to to proceed"
+      },
+      {
+        "title": "Lost Something at Guinea Bissau Airport ?",
+        "content": "Please go directly to the Lost & Found office or please contact 0123456789"
+      }
+    ]
+  },
+  {
+    "type": "services",
+    "category": "medical",
+    "title": "Medical Assistance",
+    "subtitle": "Your health matters",
+    "description": "Discover the available medical services and assistance at the airport to ensure the well-being of travelers.",
+    "coverImg": "medical_image.png",
+    "accordionItems": [
+      {
+        "title": "First Aid Stations",
+        "content": "Locate the first aid stations at the airport for immediate medical assistance."
+      },
+      {
+        "title": "Emergency Contact",
+        "content": "In case of emergencies, contact airport staff or call the emergency number provided."
+      }
+    ]
+  },
+  {
+    "type": "services",
+    "category": "car_hire",
+    "title": "Car Hire Services",
+    "subtitle": "Explore at your own pace",
+    "description": "Find information about car rental services at the airport, offering a convenient way to explore your destination.",
+    "coverImg": "car_hire_image.png",
+    "accordionItems": [
+      {
+        "title": "Rental Options",
+        "content": "Discover a variety of rental options to suit your travel needs."
+      },
+      {
+        "title": "Booking Process",
+        "content": "Learn about the easy booking process for car hire services at the airport."
+      }
+    ]
+  },
+  {
+    "type": "airport",
+    "category": "bars_cafes",
+    "title": "Bars & Cafes",
+    "subtitle": "Sip and savor",
+    "description": "Unwind at the airport's bars and cafes, offering a relaxing atmosphere and a selection of beverages and snacks.",
+    "coverImg": "bars_cafes_image.png",
+    "accordionItems": [
+      {
+        "title": "Bar Lounges",
+        "content": "Relax at the airport's bar lounges, offering a variety of beverages in a comfortable setting."
+      },
+      {
+        "title": "Cafeterias",
+        "content": "Grab a quick bite or enjoy a leisurely meal at the airport's cafeterias."
+      }
+    ]
+  },
+  {
+    "type": "airport",
+    "category": "shopping",
+    "title": "Airport Shopping",
+    "subtitle": "Retail therapy on the fly",
+    "description": "Discover a range of shops and boutiques at the airport, offering everything from luxury goods to travel essentials.",
+    "coverImg": "shopping_image.png",
+    "accordionItems": [
+      {
+        "title": "Duty-Free",
+        "content": "Explore duty-free stores offering a variety of products."
+      },
+      {
+        "title": "Fashion & Accessories",
+        "content": "Discover the latest fashion and accessories at the airport's retail outlets."
+      }
+    ]
+  },
+  {
+    "type": "airport",
+    "category": "eat_drink",
+    "title": "Dining Options",
+    "subtitle": "Culinary delights before takeoff",
+    "description": "Explore diverse dining options available at the airport, from quick bites to fine dining experiences.",
+    "coverImg": "eat_drink_image.png",
+    "accordionItems": [
+      {
+        "title": "Restaurants",
+        "content": "Get a taste of the variety of restaurants present at the airport."
+      },
+      {
+        "title": "Coffee Shops",
+        "content": "Enjoy a cup of coffee or tea at the airport's cozy coffee shops."
+      }
+    ]
+  }
+]

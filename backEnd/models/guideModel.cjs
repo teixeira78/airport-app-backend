@@ -6,53 +6,68 @@ const guideSchema = new mongoose.Schema({
     type: String,
     required: [true, 'Guide must have a type'],
     enum: {
-      values: ['passanger', 'airport', 'services'],
+      values: ['passenger', 'airport', 'services'],
       message: 'Guides type is either: passanger, airport or services',
     },
   },
-  category: {
-    type: String,
-    required: [true, 'A Guide must have a category'],
-  },
   title: {
     type: String,
-    required: [true, 'A Guide must have a title'],
-    unique: true,
-    trim: true,
+    required: [true, 'Guide type must have a title'],
   },
-  slug: String,
   subtitle: {
     type: String,
-    required: [true, 'A Guide must have a sub-title '],
+    required: [true, 'Guide type must have a subtitle'],
   },
-  description: {
-    type: String,
-    required: [true, 'A Guide must have a description'],
-  },
-  coverImg: {
-    type: String,
-    required: [true, 'A Guide must have a cover image'],
-  },
-  icon: {
-    type: String,
-  },
-  accordionItems: [
+  data: [
     {
+      category: {
+        type: String,
+        required: [true, 'A Guide must have a category'],
+      },
       title: {
         type: String,
-        required: [true, 'An accordion item must have a title'],
+        required: [true, 'A Guide must have a title'],
+        unique: true,
+        trim: true,
       },
-      content: {
+      slug: String,
+      subtitle: {
         type: String,
-        required: [true, 'An accordion item must have a content '],
+        required: [true, 'A Guide must have a sub-title '],
       },
+      description: {
+        type: String,
+        required: [true, 'A Guide must have a description'],
+      },
+      coverImg: {
+        type: String,
+        required: [true, 'A Guide must have a cover image'],
+      },
+      icon: {
+        type: String,
+      },
+      accordionItems: [
+        {
+          title: {
+            type: String,
+            required: [true, 'An accordion item must have a title'],
+          },
+          content: {
+            type: String,
+            required: [true, 'An accordion item must have a content '],
+          },
+        },
+      ],
     },
   ],
 });
 
 // Generate slug for the model
 guideSchema.pre('save', function (next) {
-  this.slug = helper.slugifyTitle(this.title);
+  const type = this.type.toLowerCase();
+  this.data.forEach((item) => {
+    item.slug = helper.slugifyTitle(item.title, type);
+  });
   next();
 });
 

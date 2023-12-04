@@ -2,10 +2,18 @@ const slugify = require('slugify');
 const AppError = require('./appError.cjs');
 
 // Remove any non-alphanumeric characters before slugify
-exports.slugifyTitle = (title) => {
-  const cleanedTitle = title.replace(/[^a-zA-Z0-9\s-]/g, '').toLowerCase();
-  return slugify(cleanedTitle, { lower: true });
+exports.slugifyTitle = (title, type) => {
+  const slug = `${type}/${title}`;
+
+  return slugify(slug, {
+    remove: /[^a-zA-Z0-9\s/]/g, // Exclude all characters except alphanumeric, spaces, and "/"
+    replacement: '-', // Replace spaces with hyphens
+    lower: true, // Convert to lowercase
+    trim: true, // Trim leading and trailing hyphens
+  });
 };
+
+// FIXME: REFACTOR THE FUNCTIONS BELOW
 
 exports.getDataByType = async (Model, type) => {
   try {

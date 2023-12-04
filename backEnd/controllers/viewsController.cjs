@@ -12,18 +12,13 @@ const helper = require('../utils/helper.cjs');
 
 exports.getHome = catchAsync(async (req, res) => {
   // 1) Get data from collection
-  const guidesData = await Guide.find({
-    category: {
-      $in: [
-        'health',
-        'immigration',
-        'check_in',
-        'security',
-        'baggage',
-        'transport',
-      ],
+  const doc = await Guide.find({
+    type: {
+      $in: 'passenger',
     },
   });
+
+  const guidesData = doc[0].data;
 
   const latestNews = await helper.getDataByType(News, 'national');
   const airportNews = await helper.getDataByType(News, 'airport');
@@ -78,14 +73,20 @@ exports.getNews = catchAsync(async (req, res) => {
 });
 
 exports.getGuide = catchAsync(async (req, res) => {
-  const currentGuide = await Guide.findOne({ slug: req.params.slug });
+  const currentSlug = req.params.slug;
+  const type = currentSlug.split('/')[0];
 
-  const { type } = currentGuide;
-  const guideData = await Guide.find({ type });
-  const guides = guideData.map((el) => ({
-    slug: el.slug,
-    title: el.title,
-  }));
+  const doc = await Guide.find({
+    type,
+  });
+
+  const currentGuide = doc[0].data.find((el) => el.slug === currentSlug);
+  const guides = doc[0].data
+    .filter((el) => el.slug !== currentSlug)
+    .map((el) => ({
+      title: el.title,
+      slug: el.slug.split('/')[1],
+    }));
 
   res.status(200).render('guide', {
     title: currentGuide.title,
@@ -95,27 +96,17 @@ exports.getGuide = catchAsync(async (req, res) => {
 });
 
 exports.getOverview = catchAsync(async (req, res) => {
-  const passangerGuideData = await helper.getOverviewData(Guide, 'passanger');
-  const serviceGuideData = await helper.getOverviewData(Guide, 'services');
-  const airportGuideData = await helper.getOverviewData(Guide, 'airport');
+  const doc = await Guide.find();
 
-  const guides = [
-    {
-      title: 'passanger guide',
-      subtitle: 'The Ultimate Passenger Guide',
-      data: passangerGuideData,
-    },
-    {
-      title: 'service guide',
-      subtitle: 'Your Comprehensive Guide to Services',
-      data: serviceGuideData,
-    },
-    {
-      title: 'airport guide',
-      subtitle: 'Explore Our In-Depth Airport Guide',
-      data: airportGuideData,
-    },
-  ];
+  const guides = doc.map((guide) => ({
+    type: guide.type,
+    title: guide.title,
+    subtitle: guide.subtitle,
+    data: guide.data.map((item) => ({
+      title: item.title,
+      slug: item.slug,
+    })),
+  }));
 
   res.status(200).render('guideOverview', {
     title: 'Guide Overview',
