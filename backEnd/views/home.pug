@@ -45,15 +45,13 @@ block content
     .container.swiper-container.d-flex.justify-content-center.align-items-center.container-section
       .container-text.pad-left
         h3.sub-heading News
-        h2.heading-secondary Airport News
-        p.text-box--description
-          | Lorem ipsum dolor sit amet, consectetur adipisicing elit. Rem
-          | reiciendis.
+        h2.heading-secondary= airportNews.title 
+        p.text-box--description= airportNews.subtitle 
 
       // Swiper
       .swiper.right-swiper
         .swiper-wrapper
-          each news in airportNews
+          each news in airportNews.data
             +card(news)
 
         .swiper-scrollbar
@@ -63,17 +61,15 @@ block content
       // Swiper
       .swiper.left-swiper
         .swiper-wrapper
-          each news in latestNews 
+          each news in latestNews.data  
             +card(news)
 
         .swiper-scrollbar
 
       .container-text.pad-right
-        h3.sub-heading News
-        h2.heading-secondary Latest News
-        p.text-box--description
-          | Lorem ipsum dolor sit amet, consectetur adipisicing elit. Rem
-          | reiciendis.
+        h3.sub-heading News 
+        h2.heading-secondary= latestNews.title 
+        p.text-box--description= latestNews.subtitle
 
   section.section-disclaimer
     .container

@@ -28,7 +28,7 @@ block content
     .guide-content
       .scrollbox
         ul.nav-tab
-          each guide, i in guides 
+          each guide, i in relatedGuides 
             +navTabLink(guide)
 
       p.guide-summary= currentGuide.description

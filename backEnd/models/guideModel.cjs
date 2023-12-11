@@ -13,11 +13,23 @@ const guideSchema = new mongoose.Schema({
   title: {
     type: String,
     required: [true, 'Guide type must have a title'],
+    unique: true,
+    trim: true,
+    maxlength: [
+      20,
+      'Guide type title must be less than or equal to 20 characters ',
+    ],
   },
   subtitle: {
     type: String,
     required: [true, 'Guide type must have a subtitle'],
+    trim: true,
+    maxlength: [
+      100,
+      'Guide type subtitle must be less than or equal to 100 characters ',
+    ],
   },
+  slug: String,
   data: [
     {
       category: {
@@ -64,10 +76,16 @@ const guideSchema = new mongoose.Schema({
 
 // Generate slug for the model
 guideSchema.pre('save', function (next) {
+  // Generate slug for each dataset in data array
   const type = this.type.toLowerCase();
   this.data.forEach((item) => {
-    item.slug = helper.slugifyTitle(item.title, type);
+    const toSlugify = `${type}/${item.title}`;
+    item.slug = helper.generateSlug(toSlugify);
   });
+
+  // Generate slug for each Guide type
+  this.slug = helper.generateSlug(this.title);
+
   next();
 });
 

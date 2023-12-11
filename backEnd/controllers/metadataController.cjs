@@ -3,7 +3,17 @@ const News = require('../models/newsModel.cjs');
 const Hotel = require('../models/hotelModel.cjs');
 
 exports.getMetadata = catchAsync(async (req, res) => {
-  const newsCount = await News.countDocuments();
+  // Unwind data array inside news doc
+  const newsDoc = await News.aggregate([
+    {
+      $unwind: '$data',
+    },
+  ]);
+
+  // Get the length to send newsCount as the metadata
+  const newsCount = newsDoc.length;
+
+  // Count the docs in Hotel documents
   const hotelCount = await Hotel.countDocuments();
 
   const metadata = {
@@ -11,5 +21,6 @@ exports.getMetadata = catchAsync(async (req, res) => {
     hotelCount,
   };
 
+  // Sent metadata as response
   res.status(200).json({ metadata });
 });

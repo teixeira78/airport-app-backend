@@ -18,7 +18,7 @@ block content
   .container.news-container
     .row.news-row.g-5
       .col-xl-8.col-sm-12.news-current
-        p.heading-mini.news.my-2= `${currentNews.type} news`
+        p.heading-mini.news.my-2= `${newsType} news`
         h2.news-heading= currentNews.title
         .news-img-container
           img.news-img(src=`/images/news/${currentNews.coverImg}.jpg` alt=`${currentNews.title}`)
