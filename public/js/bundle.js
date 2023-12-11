@@ -154,6 +154,7 @@ class $5548e641de1782a7$var$PaginationView extends (0, $f2fc15954219e5db$export$
     _generateMarkup() {
         // Configure the state of pagination buttons
         this.configPaginationButtons();
+        console.log(this._data.results);
         // Generate and return markup for rendering news items
         const html = this._data.results.map((news)=>`
       <a href="${news.slug}" class="col-xl-12 col-md-6 col-sm-12"> 

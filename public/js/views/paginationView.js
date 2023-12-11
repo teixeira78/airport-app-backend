@@ -72,6 +72,8 @@ class PaginationView extends View {
 
     this.configPaginationButtons();
 
+    console.log(this._data.results);
+
     // Generate and return markup for rendering news items
     const html = this._data.results.map(
       (news) => `

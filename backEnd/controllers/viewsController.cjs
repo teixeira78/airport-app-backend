@@ -4,15 +4,15 @@ const AppError = require('../utils/appError.cjs');
 const catchAsync = require('../utils/catchAsync.cjs');
 const APIFeatures = require('../utils/apiFeature.cjs');
 const helper = require('../utils/helper.cjs');
-
-// TODO: Understand the AppError and Error handling on prod and dev mode. Watch the udemy video again;
+const aggregations = require('../utils/aggregations.cjs');
 
 exports.getHome = catchAsync(async (req, res) => {
   // 1) Get data from collection and map it
 
   // Get Guides data
+  const guideType = 'passenger';
   const guidesDoc = await Guide.aggregate([
-    { $match: { type: 'passenger' } },
+    aggregations.commonAggregations.matchByType(guideType),
     {
       $project: {
         data: {
@@ -51,22 +51,22 @@ exports.getNews = catchAsync(async (req, res, next) => {
   const currentSlug = req.params.slug;
 
   // Extract type from slug - format 'type/title'
-  const newsType = currentSlug.split('/')[0];
+  const newsType = helper.extractTypeFromSlug(currentSlug);
 
   // Find News data where data.slug = currentSlug and return the first matching element
   const currentNewsDoc = await News.findOne(
     { 'data.slug': currentSlug },
     { 'data.$': 1 },
   );
+
   const currentNews = currentNewsDoc.data[0];
 
   // PipeLine for MongoDb query
   const aggregationPipeLine = [
-    // Unwind the 'data' array to create a separate document for each element in the array
-    { $unwind: '$data' },
+    aggregations.commonAggregations.matchByType(newsType),
+    aggregations.commonAggregations.unwindData(),
+    aggregations.commonAggregations.matchSlugNotEqual(currentSlug),
 
-    // Match documents where the 'slug' in 'data' is not equal to the specified 'currentSlug'
-    { $match: { 'data.slug': { $ne: `${currentSlug}` } } },
     {
       // Group the documents to create a new array 'documents' with specified fields
       $group: {
@@ -74,24 +74,16 @@ exports.getNews = catchAsync(async (req, res, next) => {
         documents: {
           $push: {
             title: '$data.title',
-            slug: { $arrayElemAt: [{ $split: ['$data.slug', '/'] }, 1] },
+            slug: aggregations.commonAggregations.projectSlug(),
             coverImg: '$data.coverImg',
-            publishDate: {
-              $dateToString: {
-                date: '$data.publishDate',
-                format: '%d-%m-%Y',
-                timezone: 'GMT',
-              },
-            },
+            publishDate: '$data.publishDate',
           },
         },
       },
     },
-    // Unwind the newly created 'documents' array
-    { $unwind: '$documents' },
 
-    // Replace the root document with the 'documents' array
-    { $replaceRoot: { newRoot: '$documents' } },
+    aggregations.commonAggregations.unwindDocuments(),
+    aggregations.commonAggregations.replaceRootWithDocuments(),
   ];
 
   // Paginate News doc with the parameteres requested from the client
@@ -102,9 +94,8 @@ exports.getNews = catchAsync(async (req, res, next) => {
 
   const news = await features.query;
 
-  // Check if the client accepts HTML format
+  // Check if the client accepts HTML or JSON format
   if (req.accepts('html')) {
-    // If HTML is accepted, render the 'news' view with the provided data
     res.status(200).render('news', {
       title: currentNews.title,
       newsType,
@@ -112,7 +103,6 @@ exports.getNews = catchAsync(async (req, res, next) => {
       news,
     });
   } else if (req.accepts('json')) {
-    // If JSON is accepted, send a JSON response with the 'news' data
     res.status(200).json({
       news,
     });
@@ -136,14 +126,11 @@ exports.getGuide = catchAsync(async (req, res, next) => {
   const currentGuide = currentGuideDoc.data[0];
 
   const aggregationPipeLine = [
-    // Match the document by type
-    { $match: { type: `${type}` } },
+    aggregations.commonAggregations.matchByType(type),
 
-    // Unwind the data array to create 1 doc for each element
-    { $unwind: '$data' },
+    aggregations.commonAggregations.unwindData(),
 
-    // Match only docs where slug != currentSlug
-    { $match: { 'data.slug': { $ne: `${currentSlug}` } } },
+    aggregations.commonAggregations.matchSlugNotEqual(currentSlug),
     {
       // Group the docs to create a new array 'documents' with specified fields
       $group: {
@@ -151,16 +138,15 @@ exports.getGuide = catchAsync(async (req, res, next) => {
         documents: {
           $push: {
             title: '$data.title',
-            slug: { $arrayElemAt: [{ $split: ['$data.slug', '/'] }, 1] },
+            slug: aggregations.commonAggregations.projectSlug(),
           },
         },
       },
     },
-    // Unwind the newly created 'documents' array
-    { $unwind: '$documents' },
 
-    // Replace the root doc with the 'documents' array
-    { $replaceRoot: { newRoot: '$documents' } },
+    aggregations.commonAggregations.unwindDocuments(),
+
+    aggregations.commonAggregations.replaceRootWithDocuments(),
   ];
 
   const relatedGuides = await Guide.aggregate(aggregationPipeLine);

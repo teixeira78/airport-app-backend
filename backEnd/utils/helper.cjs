@@ -1,5 +1,6 @@
 const slugify = require('slugify');
 const AppError = require('./appError.cjs');
+const aggregations = require('./aggregations.cjs');
 
 // Remove any non-alphanumeric characters before slugify
 exports.generateSlug = (slug) =>
@@ -10,12 +11,12 @@ exports.generateSlug = (slug) =>
     trim: true, // Trim leading and trailing hyphens
   });
 
-// FIXME: REFACTOR THE FUNCTIONS BELOW
+exports.extractTypeFromSlug = (slug) => slug.split('/')[0];
 
 exports.getDataByType = async (Model, type) => {
   try {
     const doc = await Model.aggregate([
-      { $match: { type: `${type}` } },
+      aggregations.commonAggregations.matchByType(type),
       {
         $project: {
           title: 1,
