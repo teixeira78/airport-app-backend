@@ -61,15 +61,15 @@ block content
       // Swiper
       .swiper.left-swiper
         .swiper-wrapper
-          each news in latestNews.data  
+          each news in nationalNews.data  
             +card(news)
 
         .swiper-scrollbar
 
       .container-text.pad-right
         h3.sub-heading News 
-        h2.heading-secondary= latestNews.title 
-        p.text-box--description= latestNews.subtitle
+        h2.heading-secondary= nationalNews.title 
+        p.text-box--description= nationalNews.subtitle
 
   section.section-disclaimer
     .container

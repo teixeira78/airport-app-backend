@@ -9,7 +9,7 @@ mixin newsBox(singleNews)
       .col-6
         .news-description
           .news-title--mini= singleNews.title
-          p.publish-date.mt-3= singleNews.publishDate.toLocaleString('en-us', {month: 'long', year: 'numeric'})
+          p.publish-date.mt-3= singleNews.publishDate
       .col-6
         .news-box-img--container
           img.news-box-img(src=`/images/news/${singleNews.coverImg}.jpg` alt=`${singleNews.title}`)

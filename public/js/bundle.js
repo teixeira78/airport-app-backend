@@ -13,7 +13,8 @@ const $eef87f1cfb0bade6$export$8548546c0aa631e6 = async function() {
         const response = await fetch(`${(0, $93068cd354048e55$export$6edd75dba255d47c)}/${(0, $93068cd354048e55$export$5b9cf06580b74957)}`);
         const data = await response.json();
         // 2) Asign response to state.search
-        $eef87f1cfb0bade6$export$ca000e230c0caa3e.search.newsCount = data.metadata.newsCount;
+        $eef87f1cfb0bade6$export$ca000e230c0caa3e.search.newsData = data.metadata.newsData;
+        $eef87f1cfb0bade6$export$ca000e230c0caa3e.search.newsType = data.metadata.newsType;
     } catch (err) {
         console.log(err);
     }
@@ -105,6 +106,7 @@ class $f2fc15954219e5db$export$2e2bcd8739ae039 {
 
 
 // FIXME: Pagination button not working properly on mobile;
+// TODO - Separate logic. Make Pagination reusable and create a view just for News
 class $5548e641de1782a7$var$PaginationView extends (0, $f2fc15954219e5db$export$2e2bcd8739ae039) {
     // DOM elements for pagination
     _parentElement = document.querySelector(".news-side-nav--preview");
@@ -116,9 +118,12 @@ class $5548e641de1782a7$var$PaginationView extends (0, $f2fc15954219e5db$export$
     addHandlerClick(handler, pageData) {
         // 1) Exit the function if no pagination buttons are present
         if (!this._paginationbtn) return;
+        this.currentNewsType = pageData.newsType;
+        const newsStats = pageData.newsData.find((el)=>el.type === this.currentNewsType);
+        this.newsCount = newsStats.count;
         // Store the current page and calculate the total number of pages
         this._currentPage = pageData.page;
-        this.numPages = Math.ceil((pageData.newsCount - 1) / this._pageLimit);
+        this.numPages = Math.ceil((this.newsCount - 1) / this._pageLimit);
         // Configure the initial state of pagination buttons
         this.configPaginationButtons();
         // 2) Listen for click event
@@ -133,28 +138,23 @@ class $5548e641de1782a7$var$PaginationView extends (0, $f2fc15954219e5db$export$
         });
     }
     configPaginationButtons() {
-        // Page 1, with more pages available
-        if (this._currentPage === 1 && this.numPages > 1) {
-            this._btnPrev.classList.add("disabled");
-            this._btnNext.classList.add("enabled");
-        }
-        // Page 1, with no additional pages
-        if (this._currentPage === 1 && this.numPages === 1) {
-            this._btnPrev.classList.add("hidden");
-            this._btnNext.classList.add("hidden");
-        }
+        const isFirstPage = this._currentPage === 1;
+        // Check if current page is last and there is more than 1 page
+        const isLastPage = this._currentPage === this.numPages && this.numPages > 1;
+        // Page 1
+        this._btnPrev.classList.toggle("disabled", isFirstPage);
+        this._btnPrev.classList.toggle("hidden", isFirstPage && this.numPages === 1);
+        this._btnNext.classList.toggle("hidden", isFirstPage && this.numPages === 1);
         // Pages between the first and last
-        if (this._currentPage > 1 && this._currentPage < this.numPages) {
-            this._btnPrev.classList.replace("disabled", "enabled");
-            this._btnNext.classList.replace("disabled", "enabled");
-        }
-        // Last page, with more than one page in total
-        if (this._currentPage === this.numPages && this.numPages > 1) this._btnNext.classList.add("disabled");
+        this._btnPrev.classList.toggle("enabled", !isFirstPage);
+        // Also enables btnNext on first page, isLastPage = false on page 1
+        this._btnNext.classList.toggle("enabled", !isLastPage);
+        // Last page
+        this._btnNext.classList.toggle("disabled", isLastPage);
     }
     _generateMarkup() {
         // Configure the state of pagination buttons
         this.configPaginationButtons();
-        console.log(this._data.results);
         // Generate and return markup for rendering news items
         const html = this._data.results.map((news)=>`
       <a href="${news.slug}" class="col-xl-12 col-md-6 col-sm-12"> 

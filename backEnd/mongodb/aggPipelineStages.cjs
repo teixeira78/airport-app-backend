@@ -1,4 +1,4 @@
-exports.commonAggregations = {
+exports.stages = {
   // Unwind the 'data' array to create a separate document for each element in the array
   unwindData: () => ({ $unwind: '$data' }),
 
@@ -17,5 +17,5 @@ exports.commonAggregations = {
   replaceRootWithDocuments: () => ({ $replaceRoot: { newRoot: '$documents' } }),
 
   // Project a new field 'slug' based on the 'data.slug' field
-  projectSlug: () => ({ $arrayElemAt: [{ $split: ['$data.slug', '/'] }, 1] }),
+  projectSlug: (slug) => ({ $arrayElemAt: [{ $split: [`${slug}`, '/'] }, 1] }),
 };

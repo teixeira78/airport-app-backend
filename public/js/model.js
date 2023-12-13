@@ -13,7 +13,8 @@ export const getMetadata = async function () {
     const data = await response.json();
 
     // 2) Asign response to state.search
-    state.search.newsCount = data.metadata.newsCount;
+    state.search.newsData = data.metadata.newsData;
+    state.search.newsType = data.metadata.newsType;
   } catch (err) {
     console.log(err);
   }

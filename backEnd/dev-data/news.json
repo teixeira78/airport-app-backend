@@ -7,7 +7,7 @@
       {
         "title": "Tech Giant Unveils New Smartphone Model",
         "author": "John Smith",
-        "publishDate": "2023-10-15",
+        "publishDate": "2014-01-01T08:15:39.736Z",
         "source": "TechNews Today",
         "content": "In a highly anticipated event, the renowned tech company unveiled its newest flagship smartphone today. The device, known as the 'TechMaster X,' promises to redefine the smartphone experience with an array of innovative features. This includes a state-of-the-art camera system, an incredibly fast processor, and an elegant design that sets it apart from its competitors.",
         "coverImg": "nationalNews-1"
@@ -15,7 +15,7 @@
       {
         "title": "Record-Breaking Heatwave Hits Western Europe",
         "author": "Emily Davis",
-        "publishDate": "2023-10-14",
+        "publishDate": "2014-01-01T08:15:39.736Z",
         "source": " Weather Watch",
         "content": "Residents across Western Europe are sweltering under the scorching sun as a record-breaking heatwave sweeps the continent. With temperatures exceeding 40 degrees Celsius in some areas, this heatwave is setting new records and testing the resilience of communities. Authorities have issued heat advisories and implemented measures to protect vulnerable populations.",
         "coverImg": "nationalNews-2"
@@ -23,7 +23,7 @@
       {
         "title": "Space Agency Announces Upcoming Mission to Mars",
         "author": "Alan Turner",
-        "publishDate": "2023-10-13",
+        "publishDate": "2014-01-01T08:15:39.736Z",
         "source": "Space News Weekly",
         "content": "In a historic announcement, the world's leading space agency has declared its intent to send astronauts to Mars. The mission, scheduled for the next decade, represents a monumental step in human space exploration. Astronauts will embark on a journey lasting several months to reach the Red Planet, conducting groundbreaking research and paving the way for potential colonization.",
         "coverImg": "nationalNews-3"
@@ -31,7 +31,7 @@
       {
         "title": "New Study Reveals Benefits of Mediterranean Diet",
         "author": "Dr. Maria Rodriguez",
-        "publishDate": "2023-10-12",
+        "publishDate": "2014-01-01T08:15:39.736Z",
         "source": "Health and Wellness Journal",
         "content": "A comprehensive study conducted over several years has confirmed what many have suspected - the Mediterranean diet is a boon for heart health. The study, which involved thousands of participants, found that adherence to this diet significantly reduced the risk of heart disease. It emphasizes the consumption of fruits, vegetables, whole grains, and healthy fats, and the findings are expected to have a profound impact on public health recommendations.",
         "coverImg": "nationalNews-4"
@@ -39,7 +39,7 @@
       {
         "title": "Breaking News: Political Scandal Rocks Capital City",
         "author": "Sarah Johnson",
-        "publishDate": "2023-10-11",
+        "publishDate": "2014-01-01T08:15:39.736Z",
         "source": "National News Network",
         "content": "The nation is in turmoil as a significant political scandal unfolds in the capital city. Shocking revelations have emerged, implicating high-ranking officials in unethical and illegal activities. The scandal has triggered calls for resignations, investigations, and an upheaval in the political landscape. The public is demanding transparency and accountability.",
         "coverImg": "nationalNews-5"
@@ -47,7 +47,7 @@
       {
         "title": "Global Economic Summit Addresses Inflation Concerns",
         "author": "Mark Roberts",
-        "publishDate": "2023-10-10",
+        "publishDate": "2014-01-01T08:15:39.736Z",
         "source": "Financial Times",
         "content": "Leaders from around the world have convened for a critical economic summit aimed at addressing the rising inflation rates that have gripped the global economy. High inflation has raised concerns about its impact on households and businesses. The summit seeks to find effective solutions, coordinate monetary policies, and stabilize economies to ensure global prosperity.",
         "coverImg": "nationalNews-6"
@@ -55,7 +55,7 @@
       {
         "title": "Endangered Species Conservation Efforts Underway",
         "author": "Emma Thompson",
-        "publishDate": "2023-10-09",
+        "publishDate": "2014-01-01T08:15:39.736Z",
         "source": "Environmental Watch",
         "content": "Conservationists are rallying to protect a critically endangered species on the brink of extinction. This species, facing habitat destruction, poaching, and declining populations, has prompted urgent conservation measures. Organizations, scientists, and governments are collaborating to preserve their natural habitat, combat illegal trade, and support breeding programs to ensure the survival of this unique and threatened species.",
         "type": "national",
@@ -64,7 +64,7 @@
       {
         "title": "New Research Shows Potential Breakthrough in Cancer Treatment",
         "author": "Dr. Andrew Mitchell",
-        "publishDate": "2023-10-08",
+        "publishDate": "2014-01-01T08:15:39.736Z",
         "source": "Medical Breakthroughs",
         "content": "Researchers have published a groundbreaking study that has the potential to revolutionize cancer treatment. The study reveals promising findings in the field of immunotherapy, enhancing the body's natural defenses against cancer cells. Early clinical trials have shown remarkable results, including improved survival rates and reduced side effects, offering hope to millions of patients and their families.",
         "type": "national",
@@ -73,7 +73,7 @@
       {
         "title": "Sports Fans Celebrate Historic Championship Victory",
         "author": "Sports Reporter",
-        "publishDate": "2023-10-07",
+        "publishDate": "2014-01-01T08:15:39.736Z",
         "source": "Sports Today",
         "content": "In an electrifying and nail-biting championship match, a historic victory has left sports fans and athletes in pure jubilation. The match saw intense competition, incredible teamwork, and a dramatic finish that will be remembered for years. The victorious team's celebrations are in full swing, and fans are pouring into the streets to celebrate this iconic moment in sports history.",
         "coverImg": "nationalNews-9"
@@ -88,7 +88,7 @@
       {
         "title": "New Airport Terminal Opens in City, Easing Travel",
         "author": "Sarah Johnson",
-        "publishDate": "2023-10-09",
+        "publishDate": "2014-01-01T08:15:39.736Z",
         "source": "Airport Gazette",
         "content": "The new airport terminal is a significant milestone in the city's development, offering advanced facilities and services to travelers. With improved check-in processes and enhanced security measures, passengers can expect a seamless journey.",
         "coverImg": "airportNews-1"
@@ -96,7 +96,7 @@
       {
         "title": "Airport Security Enhancements Boost Passenger Confidence",
         "author": "David Williams",
-        "publishDate": "2023-10-10",
+        "publishDate": "2014-01-01T08:15:39.736Z",
         "source": "Air Travel Today",
         "content": "In response to evolving security challenges, the airport has implemented a series of security enhancements that have significantly increased passenger confidence. These measures include advanced screening technologies and increased staff training.",
         "coverImg": "airportNews-2"
@@ -104,7 +104,7 @@
       {
         "title": "Record-Breaking Passenger Numbers at Local Airport",
         "author": "Emily Davis",
-        "publishDate": "2023-10-11",
+        "publishDate": "2014-01-01T08:15:39.736Z",
         "source": "Aviation News",
         "content": "The local airport is experiencing a surge in popularity, with record-breaking passenger numbers reported in the latest statistics. This achievement highlights the region's increasing connectivity and the airport's role as a major transportation hub.",
         "coverImg": "airportNews-3"
@@ -112,7 +112,7 @@
       {
         "title": "Airport Renovation Project Underway",
         "author": "Michael Chang",
-        "publishDate": "2023-10-12",
+        "publishDate": "2014-01-01T08:15:39.736Z",
         "source": "Airport Development Today",
         "content": "The airport has initiated an ambitious renovation project, which includes modernizing terminals, expanding dining options, and improving passenger amenities. The project is set to elevate the airport's reputation as a traveler-friendly destination.",
         "coverImg": "airportNews-4"
@@ -120,7 +120,7 @@
       {
         "title": "Innovative Airport Technologies Revolutionize Travel",
         "author": "Rachel Turner",
-        "publishDate": "2023-10-13",
+        "publishDate": "2014-01-01T08:15:39.736Z",
         "source": "TechAviation",
         "content": "Recent advancements in airport technologies have redefined the way passengers interact with the airport environment. From self-check-in kiosks to automated security screening, these innovations are streamlining travel processes and reducing wait times.",
         "coverImg": "airportNews-5"
@@ -128,7 +128,7 @@
       {
         "title": "Airport Expansion Plans Unveiled",
         "author": "Daniel Mitchell",
-        "publishDate": "2023-10-14",
+        "publishDate": "2014-01-01T08:15:39.736Z",
         "source": "Aviation Weekly",
         "content": "The airport is set to embark on a major expansion project, aiming to accommodate the growing demand for air travel. The plans include the construction of new runways, expanded terminals, and enhanced cargo facilities.",
         "coverImg": "airportNews-6"
@@ -136,7 +136,7 @@
       {
         "title": "Airport Delays Expected During Peak Travel Season",
         "author": "Olivia Walker",
-        "publishDate": "2023-10-15",
+        "publishDate": "2014-01-01T08:15:39.736Z",
         "source": "Travel Advisory Times",
         "content": "As the peak travel season approaches, the airport authorities anticipate increased passenger traffic. Travelers are advised to plan ahead, arrive early, and be patient as they navigate through the airport during this busy period.",
         "coverImg": "airportNews-7"
@@ -144,7 +144,7 @@
       {
         "title": "Airport Eco-Friendly Initiatives Gain Momentum",
         "author": "Alex Green",
-        "publishDate": "2023-10-16",
+        "publishDate": "2014-01-01T08:15:39.736Z",
         "source": "EcoAviation",
         "content": "The airport is committed to environmental sustainability, implementing eco-friendly initiatives such as solar power generation, energy-efficient buildings, and waste reduction programs. These efforts are receiving positive recognition from passengers and environmental groups.",
         "coverImg": "airportNews-8"
@@ -152,7 +152,7 @@
       {
         "title": "Airport Art Installation Showcases Local Talent",
         "author": "Sophie Roberts",
-        "publishDate": "2023-10-17",
+        "publishDate": "2014-01-01T08:15:39.736Z",
         "source": "Art & Travel",
         "content": "The airport has unveiled a remarkable art installation, featuring works by talented local artists. Passengers can now enjoy a vibrant and diverse cultural experience as they explore the airport's art galleries and exhibits.",
         "coverImg": "airportNews-9"
