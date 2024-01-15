@@ -1,9 +1,8 @@
 import * as model from './model';
 import swiperView from './views/swiperView';
 import paginationView from './views/paginationView';
+import newsView from './views/newsView';
 
-// TODO: IMPLEMENT ERROR HANDLING
-// TODO: ADD NAVBAR VIEW FOR STICKY NAV
 class Controller {
   constructor() {
     this.init();
@@ -17,12 +16,17 @@ class Controller {
     await model.loadSearchResultsPage(currentHref, pageLimit, goToPage);
 
     // 3) Render NEW results
-    paginationView.render(model.state.search);
+    newsView.render(model.state.search);
   }
 
   async init() {
     await model.getMetadata();
-    paginationView.addHandlerClick(this.controlPagination, model.state.search);
+
+    // eslint-disable-next-line no-unused-vars
+    const newsPageStats = newsView.initPageData(model.state.search);
+
+    paginationView.addHandlerClick(this.controlPagination, newsPageStats);
+
     swiperView.initSwiper();
   }
 }

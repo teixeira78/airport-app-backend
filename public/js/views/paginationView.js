@@ -17,40 +17,39 @@ class PaginationView extends View {
   // Number of news items to display per page
   _pageLimit = 5;
 
-  addHandlerClick(handler, pageData) {
+  addHandlerClick(handler) {
     // 1) Exit the function if no pagination buttons are present
     if (!this._paginationbtn) return;
 
-    this.currentNewsType = pageData.newsType;
+    console.log(this._paginationbtn);
 
-    const newsStats = pageData.newsData.find(
-      (el) => el.type === this.currentNewsType,
-    );
+    // this.currentNewsType = pageData.newsType;
 
-    this.newsCount = newsStats.count;
+    // const newsStats = pageData.newsData.find(
+    //   (el) => el.type === this.currentNewsType,
+    // );
+
+    // this.newsCount = newsStats.count;
 
     // Store the current page and calculate the total number of pages
-    this._currentPage = pageData.page;
-    this.numPages = Math.ceil((this.newsCount - 1) / this._pageLimit);
+    // this._currentPage = pageData.currPage;
+    // this.numPages = Math.ceil((pageData.count - 1) / pageData.limit);
 
     // Configure the initial state of pagination buttons
-    this.configPaginationButtons();
+    // this.configPaginationButtons();
 
     // 2) Listen for click event
-    this._paginationbtn.addEventListener('click', (e) => {
-      // Find the clicked button element
-
-      const clickedBtn = e.target.closest('.btn-pagination');
-      if (!clickedBtn) return;
-
-      // Update the current page based on the button clicked
-      this._currentPage += clickedBtn.classList.contains('btn-pagination--next')
-        ? 1
-        : -1;
-
-      // 3) Invoke the provided handler with updated page and limit information
-      handler(this._pageLimit, this._currentPage);
-    });
+    // this._paginationbtn.addEventListener('click', (e) => {
+    // Find the clicked button element
+    // const clickedBtn = e.target.closest('.btn-pagination');
+    // if (!clickedBtn) return;
+    // Update the current page based on the button clicked
+    // this._currentPage += clickedBtn.classList.contains('btn-pagination--next')
+    //   ? 1
+    //   : -1;
+    // 3) Invoke the provided handler with updated page and limit information
+    // handler(pageData.limit, this._currentPage);
+    // });
   }
 
   configPaginationButtons() {
@@ -84,7 +83,6 @@ class PaginationView extends View {
 
   _generateMarkup() {
     // Configure the state of pagination buttons
-
     this.configPaginationButtons();
 
     // Generate and return markup for rendering news items
